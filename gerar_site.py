@@ -852,7 +852,7 @@ TEMPLATE = r"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Concessionárias 2026 — BA Ap Log Ex e OMDS | Relatório Consolidado</title>
-<meta name="description" content="Relatório consolidado de água e energia elétrica das UG apoiadas pela BA Ap Log Ex — 1ª RM. Por que a despesa está mais cara em 2026.">
+<meta name="description" content="Histórico de consumo, tarifas e despesa com concessionárias das seis UG apoiadas pela BA Ap Log Ex — 1ª RM. Base: SAG e Tesouro Gerencial.">
 <style>
 :root{
   --verde:#1f3d2b; --verde-2:#2d5a3d; --oliva:#5c6f4a; --areia:#c9b787;
@@ -1002,6 +1002,9 @@ ol.passos b{color:var(--tinta)}
 footer{background:var(--verde);color:#dfe6dd;padding:34px 0;font-size:13.5px}
 @media (prefers-color-scheme:dark){footer{background:#16281d}}
 footer a{color:var(--areia)}
+footer .creditos{margin:0 0 18px;padding:14px 0;font-size:14.5px;line-height:1.5;
+  border-top:1px solid rgba(201,183,135,.28);border-bottom:1px solid rgba(201,183,135,.28)}
+footer .creditos b{color:#f3f1e9}
 @media print{
   nav.indice{display:none} section{page-break-inside:avoid;padding:24px 0}
   .achado{page-break-inside:avoid} .achado .corpo{display:block!important}
@@ -1015,11 +1018,15 @@ footer a{color:var(--areia)}
   <div class="wrap">
     <div class="crumb">BA Ap Log Ex &middot; 1ª Região Militar &middot; CML &middot; 1º CGCFEx &middot; RJ</div>
     <h1>Por que a despesa com concessionárias está mais cara em 2026</h1>
-    <p class="lead">Relatório consolidado de <b>água e esgoto</b> e <b>energia elétrica</b> das seis
-    Unidades Gestoras apoiadas, com base nos relatórios do <b>SAG</b> (Sistema de Acompanhamento
-    da Gestão) de 2023 a 2026 e na execução orçamentária do Tesouro Gerencial. Além do resultado,
-    o relatório documenta os <b>defeitos de lançamento</b> que hoje impedem fechar o número
-    financeiro do conjunto.</p>
+    <p class="lead">Painel de acompanhamento das contas de concessionárias das seis Unidades
+    Gestoras apoiadas: <b>histórico de consumo, de tarifas e de despesa</b> com água e esgoto,
+    energia elétrica, telefonia e serviços postais. Não trata só do que foi pago — acompanha
+    quanto se consome, a que preço e como isso evolui ao longo dos anos.</p>
+    <p class="lead">São <b>duas bases de dados</b>: o <b>SAG</b> — Sistema de Acompanhamento da
+    Gestão, de onde vêm o consumo medido, o faturamento e as metas (2023 a 2026); e o
+    <b>Tesouro Gerencial</b>, de onde vem a execução orçamentária (2022 a 2026). Cruzar as duas é
+    o que permite separar o que a unidade consumiu do que ela efetivamente pagou — e é também o
+    que revela os <b>defeitos de lançamento</b> documentados aqui.</p>
     <div class="marca" id="marcas"></div>
   </div>
 </header>
@@ -1173,6 +1180,8 @@ footer a{color:var(--areia)}
 
 <footer><div class="wrap">
   <p style="margin-bottom:6px"><b>Relatório Consolidado de Concessionárias — BA Ap Log Ex e OMDS</b></p>
+  <p class="creditos">Painel desenvolvido pelo <b>E10 do Comando da BA Ap Log Ex</b><br>
+  TC Saldanha &middot; Sgt Rosendo &middot; Sgt De Campos</p>
   <p class="sub" style="color:#c8d2c6" id="rodape"></p>
 </div></footer>
 
