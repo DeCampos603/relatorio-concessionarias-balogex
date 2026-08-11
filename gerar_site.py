@@ -319,12 +319,25 @@ def detecta_tarifario(series):
     return fora
 
 
-def energia_valores(series, tarifarias, n=6):
-    """Valor de energia por UG/ano no 1º semestre, reconstruído onde for preciso."""
+def bases_energia(series):
+    """Meses de 2026 com lançamento em cada UG — a janela de comparação daquela unidade."""
+    return {u["ug"]: len([1 for i in range(6)
+                          if (series[u["ug"]]["kwh_ponta"]["2026"][i] or 0)
+                          + (series[u["ug"]]["kwh_fora"]["2026"][i] or 0)])
+            for u in UGS}
+
+
+def energia_valores(series, tarifarias, bases):
+    """Valor de energia por UG/ano, reconstruído onde for preciso.
+
+    Usa a MESMA janela de meses que o consumo daquela UG (`bases`); do contrário a
+    tabela mostraria R$ de seis meses ao lado de kWh de cinco.
+    """
     out = {}
     for u in UGS:
         ug = u["ug"]
         s = series[ug]
+        n = bases[ug]
         recon = ug in tarifarias
         por_ano = {}
         for a in ANOS:
@@ -334,7 +347,7 @@ def energia_valores(series, tarifarias, n=6):
                                  for i in range(n))
             else:
                 por_ano[a] = soma(s["rs_ponta"][a], n) + soma(s["rs_fora"][a], n)
-        out[ug] = {"reconstruido": recon, "valores": por_ano}
+        out[ug] = {"reconstruido": recon, "valores": por_ano, "meses": n}
     return out
 
 
@@ -664,7 +677,9 @@ def achados(series, tarifarias, dec, ms, ser_agua, orc):
                    f"ponta no período apurado, onde hoje não se lança nada — por isso o ECT "
                    f"aparece {pc(m321['desvio'])} em relação à meta total, número sem sentido. "
                    f"Comparado só no fora ponta, o ECT está {pc(m321['fora_desvio'])} "
-                   f"em relação à sua meta.",
+                   f"em relação à sua meta. E essa meta de fora ponta é frágil: como 2023 e 2024 "
+                   f"estão zerados, o SAG a calcula sobre <b>um único ano</b> (2025), sem a "
+                   f"suavização que a média de três anos daria.",
         "acao": "Confirmar junto ao ECT se houve mudança de modalidade tarifária ou apenas erro "
                 "de coluna, refazer 2023–2024 no critério atual e recalcular a meta.",
     })
@@ -1213,11 +1228,12 @@ function barras(alvo, itens, {altura = 250, formato = v => n(v), rotulo = ''} = 
   alvo.innerHTML = g;
 }
 
-function barrasDuplas(alvo, itens, serieA, serieB, {altura = 280, formato = v => n(v)} = {}) {
+function barrasDuplas(alvo, itens, serieA, serieB, {altura = 280, formato = v => n(v), rotulo = ''} = {}) {
   const L = 62, R = 122, T = 16, B = 48, W = 760, H = altura;
   const max = Math.max(...itens.flatMap(i => [i.a, i.b])) * 1.14 || 1;
   const iw = (W - L - R) / itens.length;
-  let g = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">`;
+  let g = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block"
+    role="img" aria-label="${rotulo || serieA + ' contra ' + serieB}">`;
   for (let k = 0; k <= 4; k++) {
     const y = T + (H - T - B) * k / 4, v = max * (1 - k / 4);
     g += `<line class="grade-h" x1="${L}" y1="${y}" x2="${W - R}" y2="${y}"/>`;
@@ -1240,7 +1256,7 @@ function barrasDuplas(alvo, itens, serieA, serieB, {altura = 280, formato = v =>
   alvo.innerHTML = g;
 }
 
-function cascata(alvo, passos, {altura = 290} = {}) {
+function cascata(alvo, passos, {altura = 290, rotulo = ''} = {}) {
   const L = 78, R = 14, T = 22, B = 62, W = 760, H = altura;
   let acc = 0; const pts = [];
   passos.forEach(p => {
@@ -1251,7 +1267,8 @@ function cascata(alvo, passos, {altura = 290} = {}) {
   const min = Math.min(...vs, 0), max = Math.max(...vs);
   const esc = v => H - B - (H - T - B) * ((v - min) / (max - min || 1));
   const iw = (W - L - R) / pts.length;
-  let g = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">`;
+  let g = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block"
+    role="img" aria-label="${rotulo}">`;
   for (let k = 0; k <= 4; k++) {
     const v = min + (max - min) * k / 4, y = esc(v);
     g += `<line class="grade-h" x1="${L}" y1="${y}" x2="${W - R}" y2="${y}"/>`;
@@ -1631,10 +1648,12 @@ $('#cards-ug').innerHTML = D.ugs.map(u => {
 }).join('');
 
 /* ---- metas */
-$('#metas-lead').innerHTML = `A meta lançada no SAG é uma fração fixa da média dos três anos
-anteriores, mês a mês — apurado nos próprios arquivos: <b>85% para água</b>,
-<b>85% para energia fora ponta</b> e <b>90% para energia ponta</b>. Barras acima de 100% indicam
-UG acima da meta, isto é, consumindo mais do que o alvo.`;
+$('#metas-lead').innerHTML = `A meta lançada no SAG é uma fração fixa da média histórica que o
+próprio sistema calcula, mês a mês — apurado em todos os registros dos arquivos:
+<b>85% para água</b>, <b>85% para energia fora ponta</b> e <b>90% para energia ponta</b>.
+Barras acima de 100% indicam UG acima da meta, isto é, consumindo mais do que o alvo.
+<b>Atenção:</b> essa média ignora os anos sem lançamento, então nem sempre é trienal — no fora
+ponta do ECT ela se apoia em <b>um único ano</b> (2025), pois 2023 e 2024 estão zerados.`;
 
 const em = D.metas.energia;
 $('#t-meta').innerHTML = `<table><thead><tr><th>Unidade Gestora</th><th class="num">Base</th>
@@ -1718,12 +1737,14 @@ function desenharGraficos() {
     {rotulo: 'Efeito preço|(' + pct(T.var_p) + ' na tarifa)', valor: T.efeito_preco},
     {rotulo: 'Efeito cruzado', valor: T.efeito_misto},
     {rotulo: 'Despesa|jan–jun 2026', valor: T.r26, tipo: 'total'},
-  ]);
+  ], {rotulo: 'Decomposição da variação da despesa com água entre 2025 e 2026 em efeito volume, efeito preço e efeito cruzado'});
 
   barrasDuplas($('#g-kwh'),
     D.energia.itens.map(i => ({rotulo: i.sigla, a: i.k25 / 1000, b: i.k26 / 1000,
       nota: pct(i.variacao), notaCor: i.variacao > 0 ? SOBE : DESCE})),
-    'jan–jun 2025 (MWh)', 'jan–jun 2026 (MWh)', {formato: v => n(v, 0)});
+    'jan–jun 2025 (MWh)', 'jan–jun 2026 (MWh)',
+    {formato: v => n(v, 0),
+     rotulo: 'Consumo de energia por UG, comparando o 1º semestre de 2025 com o de 2026'});
 
   barras($('#g-meta-agua'), D.metas.agua.map(m => ({
     rotulo: m.sigla, rotulo2: `${n(m.acumulado)} m³ até ${MES[m.mes - 1]}`,
@@ -1800,7 +1821,8 @@ def main():
     tarifarias = detecta_tarifario(series)
     dec = decomposicao_agua(series)
     ser_agua = serie_tarifa_agua(series)
-    val_energia = energia_valores(series, tarifarias)
+    bases = bases_energia(series)
+    val_energia = energia_valores(series, tarifarias, bases)
     ms = metas(consolidado, meta_energia)
     comp = completude(series)
     orc = orcamento(orc_bruto, series, tarifarias)
@@ -1809,8 +1831,7 @@ def main():
     itens_e, tot = [], {"k23": 0, "k24": 0, "k25": 0, "k26": 0}
     for u in UGS:
         ug, s = u["ug"], series[u["ug"]]
-        nm = len([1 for i in range(6)
-                  if (s["kwh_ponta"]["2026"][i] or 0) + (s["kwh_fora"]["2026"][i] or 0)])
+        nm = bases[ug]
         k = {a: soma(s["kwh_ponta"][a], nm) + soma(s["kwh_fora"][a], nm) for a in ANOS}
         v = val_energia[ug]
         if ug == "160238":
@@ -1979,8 +2000,10 @@ efeito cruzado = (p₂₆ &minus; p₂₅) &times; (q₂₆ &minus; q₂₅). A 
 a variação da despesa — o que serve de conferência do cálculo.</li>
 <li><b>Gasto de energia reconstruído</b> = &Sigma; (kWh do mês &times; tarifa lançada no mês),
 aplicado apenas às UG do achado A2.</li>
-<li><b>Meta:</b> percentual fixo da média dos três anos anteriores, mês a mês. Verificado em
-todos os registros dos arquivos: 85% na água, 85% na energia fora ponta e 90% na energia ponta.</li>
+<li><b>Meta:</b> percentual fixo sobre a média histórica calculada pelo próprio SAG, mês a mês.
+Verificado em todos os registros dos arquivos: 85% na água, 85% na energia fora ponta e 90% na
+energia ponta. Essa média <b>desconsidera os anos sem lançamento</b> — não é necessariamente
+trienal, e no fora ponta do ECT reduz-se a um único ano.</li>
 </ul>
 
 <h3>Limites</h3>
