@@ -1,5 +1,5 @@
 {
- "gerado_em": "10/08/2026 21:46",
+ "gerado_em": "10/08/2026 21:59",
  "ugs": [
   {
    "ug": "160238",
@@ -533,7 +533,7 @@
     "A tarifa implícita fecha a prova: a coluna “fora ponta” de jan/2026 resulta em R$ 1,5716/kWh, patamar de ponta — a mesma tarifa de ponta apurada no DC Mun no mesmo mês (R$ 1,5716/kWh). Duas UG da mesma praça e do mesmo mês: o que está trocado é a coluna."
    ],
    "impacto": "O acumulado de ponta da UG aparece em 283.832 kWh contra uma meta de 26.483 kWh — desvio aparente de +972%, que não existe. E, se a classificação chegar assim à fatura, esses 283.832 kWh custariam R$ 446.057,92 no posto de ponta contra R$ 65.626,08 fora dele — R$ 380.431,84 em seis meses.",
-   "acao": "Reprocessar os seis meses de 2026 no SISCEAGE e conferir contra as faturas originais da distribuidora (demanda contratada e postos tarifários)."
+   "acao": "Reprocessar os seis meses de 2026 no SAG e conferir contra as faturas originais da distribuidora (demanda contratada e postos tarifários)."
   },
   {
    "id": "A2",
@@ -549,7 +549,7 @@
     "Confirmação cruzada: o “valor” de ponta de jan/2026 dessas UG (R$ 1,57) coincide com a tarifa de ponta apurada nas demais UG no mesmo mês (R$ 1,5716/kWh)."
    ],
    "impacto": "Reconstruído por kWh × tarifa, só o 1º semestre de 2026 do 1º D Sup soma R$ 241.217,22 — valor que hoje não aparece em lugar nenhum do consolidado.",
-   "acao": "Padronizar o preenchimento do SISCEAGE: campo VALOR = valor total da fatura, com tributos, encargos e bandeira tarifária. Recompor a série 2023–2026 dessas duas UG."
+   "acao": "Padronizar o preenchimento do SAG: campo VALOR = valor total da fatura, com tributos, encargos e bandeira tarifária. Recompor a série 2023–2026 dessas duas UG."
   },
   {
    "id": "A3",
@@ -581,7 +581,7 @@
     "Nov/2025 da água está zerado em consumo e em valor: fatura não lançada."
    ],
    "impacto": "O BMSA aparece +50,0% em relação à meta de água — o maior desvio do conjunto — sobre uma base de comparação com um mês faltando e outros inflados por refaturamento.",
-   "acao": "Marcar os meses de refaturamento no SISCEAGE, lançar nov/2025 da água e recalcular a média trienal excluindo os atípicos."
+   "acao": "Marcar os meses de refaturamento no SAG, lançar nov/2025 da água e recalcular a média trienal excluindo os atípicos."
   },
   {
    "id": "A5",
@@ -621,14 +621,14 @@
    "servico": "Energia",
    "ug": "TODAS",
    "sigla": "Conjunto",
-   "titulo": "O SISCEAGE registra cerca de 84% do que a fatura de energia custa",
-   "resumo": "Confrontado com o caixa efetivamente pago, o faturamento de energia lançado no SISCEAGE fica sistematicamente abaixo do desembolso. Na água isso não acontece — lá o sistema bate com o caixa.",
+   "titulo": "O SAG registra cerca de 84% do que a fatura de energia custa",
+   "resumo": "Confrontado com o caixa efetivamente pago, o faturamento de energia lançado no SAG fica sistematicamente abaixo do desembolso. Na água isso não acontece — lá o sistema bate com o caixa.",
    "evidencias": [
-    "Razão entre o pago no ano e o faturado no SISCEAGE, energia: 1,190 em 2023, 1,194 em 2024, 1,188 em 2025. A estabilidade em três exercícios indica componente estrutural, não erro pontual.",
+    "Razão entre o pago no ano e o faturado no SAG, energia: 1,190 em 2023, 1,194 em 2024, 1,188 em 2025. A estabilidade em três exercícios indica componente estrutural, não erro pontual.",
     "Na água a mesma razão é 1,009 em 2023, 1,018 em 2024, 1,048 em 2025 — praticamente 1 para 1. É o que valida o dado de água e isola o problema na energia.",
     "A dispersão por UG é grande em 2025: de 1,01 no ECT a 1,38 na Ba Ap Log Ex, o que sugere dependência da modalidade tarifária de cada unidade."
    ],
-   "impacto": "O SISCEAGE mede consumo faturado em kWh. A fatura cobra também demanda contratada, energia reativa excedente, bandeiras e a contribuição de iluminação pública — nenhum desses itens entra no sistema. Planejar energia só pelo SISCEAGE subestima a despesa em torno de um sexto.",
+   "impacto": "O SAG mede consumo faturado em kWh. A fatura cobra também demanda contratada, energia reativa excedente, bandeiras e a contribuição de iluminação pública — nenhum desses itens entra no sistema. Planejar energia só pelo SAG subestima a despesa em torno de um sexto.",
    "acao": "Confrontar uma fatura completa de cada UG com o respectivo lançamento para quantificar cada componente ausente. Onde houver demanda contratada acima do uso efetivo, há economia disponível sem reduzir consumo."
   },
   {
@@ -2516,18 +2516,18 @@
    "<b>ECT — nov e dez/2024 sem valor lançado</b> (R$ 0,00 com consumo registrado).",
    "<b>BMSA — nov/2025 de água zerado</b> em consumo e valor: fatura não lançada.",
    "<b>BMSA e ECT — energia sem jun/2026</b>; o BCMS já tem jul/2026. Mês de corte diferente entre UG (achado A5).",
-   "<b>Os arquivos não identificam a concessionária.</b> O SISCEAGE exporta UG, sigla, RM, comando, CGCFEx e UF — nunca o nome da distribuidora, a matrícula da instalação nem a denominação por extenso da unidade. A organização “por concessionária” foi feita por <i>serviço</i> (energia elétrica / água e esgoto), e os nomes das UG neste relatório foram informados pela BA Ap Log Ex.",
-   "<b>Não há faturas originais no acervo.</b> Nenhum documento da concessionária permite confirmar os achados A1 a A4 nem decompor os cerca de 16% da fatura de energia que o SISCEAGE não registra (achado A7).",
+   "<b>Os arquivos não identificam a concessionária.</b> O SAG exporta UG, sigla, RM, comando, CGCFEx e UF — nunca o nome da distribuidora, a matrícula da instalação nem a denominação por extenso da unidade. A organização “por concessionária” foi feita por <i>serviço</i> (energia elétrica / água e esgoto), e os nomes das UG neste relatório foram informados pela BA Ap Log Ex.",
+   "<b>Não há faturas originais no acervo.</b> Nenhum documento da concessionária permite confirmar os achados A1 a A4 nem decompor os cerca de 16% da fatura de energia que o SAG não registra (achado A7).",
    "<b>O exercício de 2026 está em curso.</b> O crosstab traz a posição acumulada até agosto e usa outro atributo de data (“Mês Lançamento”) — os valores de 2026 não são comparáveis linha a linha com os exercícios encerrados. O que se pode afirmar com segurança é a composição do desembolso e o abatimento do resto a pagar, que fecham entre si."
   ]
  },
  "acoes": [
   {
    "t": "Corrigir a inversão ponta/fora ponta da Ba Ap Log Ex em 2026 (A1)",
-   "d": "Reprocessar os seis meses no SISCEAGE conferindo contra as faturas da distribuidora. Até lá, nenhum indicador de energia por posto tarifário da UG 160238 deve ser usado para decisão ou prestação de contas."
+   "d": "Reprocessar os seis meses no SAG conferindo contra as faturas da distribuidora. Até lá, nenhum indicador de energia por posto tarifário da UG 160238 deve ser usado para decisão ou prestação de contas."
   },
   {
-   "t": "Padronizar o campo VALOR do SISCEAGE (A2)",
+   "t": "Padronizar o campo VALOR do SAG (A2)",
    "d": "Orientar 1º D Sup e BCMS a lançar o valor total da fatura, com tributos e bandeira tarifária, e recompor a série 2023–2026 dessas duas UG."
   },
   {
@@ -2556,13 +2556,13 @@
   },
   {
    "t": "Decompor uma fatura completa de energia por UG (A7)",
-   "d": "O SISCEAGE capta cerca de 84% do que se paga em energia. Identificar quanto é demanda contratada, reativo, bandeira e iluminação pública mostra onde há economia sem reduzir consumo — sobretudo nas UG com razão mais alta."
+   "d": "O SAG capta cerca de 84% do que se paga em energia. Identificar quanto é demanda contratada, reativo, bandeira e iluminação pública mostra onde há economia sem reduzir consumo — sobretudo nas UG com razão mais alta."
   },
   {
    "t": "Usar a meta por posto tarifário, não a meta total",
    "d": "A meta de ponta é 90% da média trienal e a de fora ponta é 85%. Somar as duas e comparar com o consumo total mistura dois critérios e esconde desvios, como ficou evidente no ECT."
   }
  ],
- "metodo": "\n<h3>Fonte</h3>\n<p>Arquivos exportados do <b>SISCEAGE</b>, cobrindo jan/2023 a jul/2026, das seis UG apoiadas\npela BA Ap Log Ex — todas em <b>1ª RM / CML / 1º CGCFEx / RJ</b>, conforme os próprios arquivos\ninformam. São as séries históricas por UG e serviço, os gráficos de consumo × meta de 2026 e\ndois relatórios consolidados de meta. Os arquivos têm extensão <code>.xls</code>, mas o conteúdo\né HTML de tabela do Highcharts; foram lidos diretamente do HTML, sem Excel.</p>\n<p>A execução orçamentária vem dos <b>crosstabs do Tesouro Gerencial</b> (“CRÉDITO DISP”),\ncobrindo os exercícios de <b>2022 a 2025</b> encerrados e a posição parcial de <b>2026 até\nagosto</b>, nos Planos Internos das concessionárias:\n<code>I3DACSPAGES</code> (água e esgoto), <code>I3DACSPENEL</code> (energia e iluminação pública),\n<code>I3DACSPTELM</code> (telefonia móvel), <code>I3DACSPTELF</code> (telefonia fixa) e\n<code>I3DACSPCORR</code> (postais). Os crosstabs trazem linhas de subtotal por Plano Interno;\nelas são descartadas na leitura — sem isso o valor dobraria. As colunas de natureza 339000\ncarregam apenas provisão e crédito disponível, e por isso não entram nos totais de despesa.\nO layout do cabeçalho muda entre extrações (às vezes a métrica vem antes do período, às vezes\ndepois), então as duas linhas são localizadas pelo conteúdo. <b>O arquivo de 2026 usa o atributo\n“Mês Lançamento” em vez de “NC — Dia Emissão”</b>, por isso a posição parcial do exercício é\napresentada em bloco separado, e não na mesma série dos anos fechados.</p>\n\n<p>Dois dados <b>não vêm de nenhuma das duas fontes</b> e precisam de registro à parte:</p>\n<ul>\n<li>A <b>denominação por extenso das unidades</b> foi informada pela BA Ap Log Ex; o sistema\nexporta apenas a sigla. Todo o resto da identificação (UG, RM, comando, CGCFEx, UF) vem\ndos arquivos.</li>\n<li>O <b>nome da concessionária</b> continua sem fonte: não aparece em nenhum arquivo do acervo,\nnem há matrícula ou número de instalação. Por isso a organização “por concessionária” foi feita\npor <i>serviço</i>.</li>\n</ul>\n\n<h3>Recortes</h3>\n<ul>\n<li><b>Água:</b> jan–jun de cada ano, seis meses fechados nas seis UG.</li>\n<li><b>Energia:</b> mesma janela, reduzida a jan–mai nas UG sem jun/2026 lançado\n(BMSA e ECT). A coluna “Base” da tabela de energia informa o recorte de cada UG; o total do\nconjunto soma bases diferentes e está assinalado como tal.</li>\n<li>Jul/2026 do BCMS foi excluído de todas as comparações entre anos.</li>\n</ul>\n\n<h3>Fórmulas</h3>\n<ul>\n<li><b>Tarifa implícita</b> = valor lançado &divide; consumo lançado. Não é a tarifa homologada da\nconcessionária; é o preço efetivamente pago por unidade, já com tributos, bandeiras e encargos\nembutidos, como chega ao orçamento.</li>\n<li><b>Decomposição preço/volume:</b> efeito preço = (p₂₆ &minus; p₂₅) &times; q₂₅;\nefeito volume = (q₂₆ &minus; q₂₅) &times; p₂₅;\nefeito cruzado = (p₂₆ &minus; p₂₅) &times; (q₂₆ &minus; q₂₅). A soma dos três reproduz exatamente\na variação da despesa — o que serve de conferência do cálculo.</li>\n<li><b>Gasto de energia reconstruído</b> = &Sigma; (kWh do mês &times; tarifa lançada no mês),\naplicado apenas às UG do achado A2.</li>\n<li><b>Meta:</b> percentual fixo da média dos três anos anteriores, mês a mês. Verificado em\ntodos os registros dos arquivos: 85% na água, 85% na energia fora ponta e 90% na energia ponta.</li>\n</ul>\n\n<h3>Limites</h3>\n<ul>\n<li>Os achados A1 a A4 são inferidos da <b>consistência interna dos próprios dados</b>. São\nfortes o bastante para suspender o uso dos números, mas <b>só a fatura original confirma</b> o que\naconteceu.</li>\n<li>Onde a tarifa implícita de energia cai de forma atípica em 2026, há mais de uma explicação\npossível — entre elas mudança de modalidade tarifária ou faturamento parcial. <b>Este relatório\nnão afirma qual é o caso</b>: o acervo não permite decidir.</li>\n<li>Nenhum valor foi corrigido pela inflação. Todas as variações são <b>nominais</b>.</li>\n<li>A projeção anual do efeito preço da água supõe que o 2º semestre repita o comportamento do\n1º; é ordem de grandeza, não previsão.</li>\n</ul>",
- "rodape": "Fonte: SISCEAGE — relatórios de consumo e meta de água e energia das UG 160238, 160246, 160304, 160307, 160321 e 160329 (1ª RM / CML / 1º CGCFEx / RJ). Séries de jan/2023 a jul/2026. Página estática, sem coleta de dados do visitante. Documento de trabalho para uso interno: os achados A1 a A4 devem ser conferidos contra as faturas originais antes de qualquer providência externa."
+ "metodo": "\n<h3>Fonte</h3>\n<p>Arquivos exportados do <b>SAG — Sistema de Acompanhamento da Gestão</b>, cobrindo jan/2023 a\njul/2026, das seis UG apoiadas\npela BA Ap Log Ex — todas em <b>1ª RM / CML / 1º CGCFEx / RJ</b>, conforme os próprios arquivos\ninformam. São as séries históricas por UG e serviço, os gráficos de consumo × meta de 2026 e\ndois relatórios consolidados de meta. Os arquivos têm extensão <code>.xls</code>, mas o conteúdo\né HTML de tabela do Highcharts; foram lidos diretamente do HTML, sem Excel.</p>\n<p>A execução orçamentária vem dos <b>crosstabs do Tesouro Gerencial</b> (“CRÉDITO DISP”),\ncobrindo os exercícios de <b>2022 a 2025</b> encerrados e a posição parcial de <b>2026 até\nagosto</b>, nos Planos Internos das concessionárias:\n<code>I3DACSPAGES</code> (água e esgoto), <code>I3DACSPENEL</code> (energia e iluminação pública),\n<code>I3DACSPTELM</code> (telefonia móvel), <code>I3DACSPTELF</code> (telefonia fixa) e\n<code>I3DACSPCORR</code> (postais). Os crosstabs trazem linhas de subtotal por Plano Interno;\nelas são descartadas na leitura — sem isso o valor dobraria. As colunas de natureza 339000\ncarregam apenas provisão e crédito disponível, e por isso não entram nos totais de despesa.\nO layout do cabeçalho muda entre extrações (às vezes a métrica vem antes do período, às vezes\ndepois), então as duas linhas são localizadas pelo conteúdo. <b>O arquivo de 2026 usa o atributo\n“Mês Lançamento” em vez de “NC — Dia Emissão”</b>, por isso a posição parcial do exercício é\napresentada em bloco separado, e não na mesma série dos anos fechados.</p>\n\n<p>Dois dados <b>não vêm de nenhuma das duas fontes</b> e precisam de registro à parte:</p>\n<ul>\n<li>A <b>denominação por extenso das unidades</b> foi informada pela BA Ap Log Ex; o sistema\nexporta apenas a sigla. Todo o resto da identificação (UG, RM, comando, CGCFEx, UF) vem\ndos arquivos.</li>\n<li>O <b>nome da concessionária</b> continua sem fonte: não aparece em nenhum arquivo do acervo,\nnem há matrícula ou número de instalação. Por isso a organização “por concessionária” foi feita\npor <i>serviço</i>.</li>\n</ul>\n\n<h3>Recortes</h3>\n<ul>\n<li><b>Água:</b> jan–jun de cada ano, seis meses fechados nas seis UG.</li>\n<li><b>Energia:</b> mesma janela, reduzida a jan–mai nas UG sem jun/2026 lançado\n(BMSA e ECT). A coluna “Base” da tabela de energia informa o recorte de cada UG; o total do\nconjunto soma bases diferentes e está assinalado como tal.</li>\n<li>Jul/2026 do BCMS foi excluído de todas as comparações entre anos.</li>\n</ul>\n\n<h3>Fórmulas</h3>\n<ul>\n<li><b>Tarifa implícita</b> = valor lançado &divide; consumo lançado. Não é a tarifa homologada da\nconcessionária; é o preço efetivamente pago por unidade, já com tributos, bandeiras e encargos\nembutidos, como chega ao orçamento.</li>\n<li><b>Decomposição preço/volume:</b> efeito preço = (p₂₆ &minus; p₂₅) &times; q₂₅;\nefeito volume = (q₂₆ &minus; q₂₅) &times; p₂₅;\nefeito cruzado = (p₂₆ &minus; p₂₅) &times; (q₂₆ &minus; q₂₅). A soma dos três reproduz exatamente\na variação da despesa — o que serve de conferência do cálculo.</li>\n<li><b>Gasto de energia reconstruído</b> = &Sigma; (kWh do mês &times; tarifa lançada no mês),\naplicado apenas às UG do achado A2.</li>\n<li><b>Meta:</b> percentual fixo da média dos três anos anteriores, mês a mês. Verificado em\ntodos os registros dos arquivos: 85% na água, 85% na energia fora ponta e 90% na energia ponta.</li>\n</ul>\n\n<h3>Limites</h3>\n<ul>\n<li>Os achados A1 a A4 são inferidos da <b>consistência interna dos próprios dados</b>. São\nfortes o bastante para suspender o uso dos números, mas <b>só a fatura original confirma</b> o que\naconteceu.</li>\n<li>Onde a tarifa implícita de energia cai de forma atípica em 2026, há mais de uma explicação\npossível — entre elas mudança de modalidade tarifária ou faturamento parcial. <b>Este relatório\nnão afirma qual é o caso</b>: o acervo não permite decidir.</li>\n<li>Nenhum valor foi corrigido pela inflação. Todas as variações são <b>nominais</b>.</li>\n<li>A projeção anual do efeito preço da água supõe que o 2º semestre repita o comportamento do\n1º; é ordem de grandeza, não previsão.</li>\n</ul>",
+ "rodape": "Fonte: SAG (Sistema de Acompanhamento da Gestão) — relatórios de consumo e meta de água e energia — e Tesouro Gerencial, para a execução orçamentária. UG 160238, 160246, 160304, 160307, 160321 e 160329 (1ª RM / CML / 1º CGCFEx / RJ). Séries de jan/2023 a jul/2026. Página estática, sem coleta de dados do visitante. Documento de trabalho para uso interno: os achados A1 a A4 devem ser conferidos contra as faturas originais antes de qualquer providência externa."
 }

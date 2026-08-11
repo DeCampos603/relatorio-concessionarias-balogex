@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Gera o Relatório Consolidado de Concessionárias (água e energia) da BA Ap Log Ex
-e das OMDS apoiadas, a partir dos arquivos .xls exportados do SISCEAGE.
+e das OMDS apoiadas, a partir dos arquivos .xls exportados do SAG.
 
 Entrada : G:\\Meu Drive\\REPO\\RELATORIO CONCESSIONARIAS  (árvore já organizada)
 Saída   : site/index.html (autocontido) + site/dados.json
@@ -19,7 +19,7 @@ SAIDA = os.path.join(AQUI, "site")
 MES = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
 ANOS = ["2023", "2024", "2025", "2026"]
 
-# UG, sigla, RM, comando, CGCFEx e UF vêm dos próprios arquivos do SISCEAGE.
+# UG, sigla, RM, comando, CGCFEx e UF vêm dos próprios arquivos do SAG.
 # A denominação por extenso ("nome") NÃO é exportada pelo sistema: foi informada pela
 # BA Ap Log Ex. O nome da concessionária continua sem fonte em todo o acervo.
 UGS = [
@@ -308,7 +308,7 @@ def pc(v, casas=1):
 # -------------------------------------------------------------------- indicadores
 
 def detecta_tarifario(series):
-    """UGs em que o campo VALOR do SISCEAGE contém a TARIFA (R$/kWh), não a fatura."""
+    """UGs em que o campo VALOR do SAG contém a TARIFA (R$/kWh), não a fatura."""
     fora = []
     for u in UGS:
         s = series[u["ug"]]
@@ -420,7 +420,7 @@ def metas(consolidado, meta_energia):
 
 
 def orcamento(orc, series, tarifarias):
-    """Consolida a execução orçamentária e cruza com o faturamento do SISCEAGE."""
+    """Consolida a execução orçamentária e cruza com o faturamento do SAG."""
     if not orc:
         return None
     reg, tot_ug, periodos = orc["reg"], orc["total_ug"], orc["periodos"]
@@ -472,7 +472,7 @@ def orcamento(orc, series, tarifarias):
         t = sum(tot_ug.get((a, u["ug"], L), 0.0) for u in UGS)
         peso_total[a] = {"conc": c, "total": t, "pct": (c / t * 100) if t else None}
 
-    # --- validação cruzada: SISCEAGE (faturado no ano) x caixa do ano
+    # --- validação cruzada: SAG (faturado no ano) x caixa do ano
     def sis_agua(ug, a):
         return soma(series[ug]["rs_agua"][a])
 
@@ -483,7 +483,7 @@ def orcamento(orc, series, tarifarias):
                        (s["kwh_fora"][a][i] or 0) * (s["rs_fora"][a][i] or 0) for i in range(12))
         return soma(s["rs_ponta"][a]) + soma(s["rs_fora"][a])
 
-    anos_cruz = [a for a in anos if a in ANOS]      # só onde há série do SISCEAGE
+    anos_cruz = [a for a in anos if a in ANOS]      # só onde há série do SAG
     cruzamento = []
     for pi, rot, chave, fn in (("I3DACSPAGES", "Água e esgoto", "agua", sis_agua),
                                ("I3DACSPENEL", "Energia elétrica", "energia", sis_energia)):
@@ -608,7 +608,7 @@ def achados(series, tarifarias, dec, ms, ser_agua, orc):
                    f"assim à fatura, esses {fmt(kwh_ponta_decl)} kWh custariam "
                    f"R$ {fmt(custo_ponta, 2)} no posto de ponta contra R$ {fmt(custo_fora, 2)} "
                    f"fora dele — R$ {fmt(custo_ponta - custo_fora, 2)} em seis meses.",
-        "acao": "Reprocessar os seis meses de 2026 no SISCEAGE e conferir contra as faturas "
+        "acao": "Reprocessar os seis meses de 2026 no SAG e conferir contra as faturas "
                 "originais da distribuidora (demanda contratada e postos tarifários).",
     })
 
@@ -640,7 +640,7 @@ def achados(series, tarifarias, dec, ms, ser_agua, orc):
         "impacto": f"Reconstruído por kWh × tarifa, só o 1º semestre de 2026 do {ex_sig} soma "
                    f"R$ {fmt(ex_rec, 2)} — valor que hoje não aparece em lugar nenhum do "
                    f"consolidado.",
-        "acao": "Padronizar o preenchimento do SISCEAGE: campo VALOR = valor total da fatura, "
+        "acao": "Padronizar o preenchimento do SAG: campo VALOR = valor total da fatura, "
                 "com tributos, encargos e bandeira tarifária. Recompor a série 2023–2026 dessas "
                 "duas UG.",
     })
@@ -693,7 +693,7 @@ def achados(series, tarifarias, dec, ms, ser_agua, orc):
         "impacto": f"O BMSA aparece {pc(m304['desvio'])} em relação à meta de água — o maior "
                    f"desvio do conjunto — sobre uma base de comparação com um mês faltando e "
                    f"outros inflados por refaturamento.",
-        "acao": "Marcar os meses de refaturamento no SISCEAGE, lançar nov/2025 da água e "
+        "acao": "Marcar os meses de refaturamento no SAG, lançar nov/2025 da água e "
                 "recalcular a média trienal excluindo os atípicos.",
     })
 
@@ -751,12 +751,12 @@ def achados(series, tarifarias, dec, ms, ser_agua, orc):
         disp = sorted(ce["por_ug"], key=lambda x: -(x["razao"] or 0))
         a.append({
             "id": "A7", "grau": "alto", "servico": "Energia", "ug": "TODAS", "sigla": "Conjunto",
-            "titulo": "O SISCEAGE registra cerca de 84% do que a fatura de energia custa",
+            "titulo": "O SAG registra cerca de 84% do que a fatura de energia custa",
             "resumo": "Confrontado com o caixa efetivamente pago, o faturamento de energia "
-                      "lançado no SISCEAGE fica sistematicamente abaixo do desembolso. Na água "
+                      "lançado no SAG fica sistematicamente abaixo do desembolso. Na água "
                       "isso não acontece — lá o sistema bate com o caixa.",
             "evidencias": [
-                f"Razão entre o pago no ano e o faturado no SISCEAGE, energia: {razoes}. "
+                f"Razão entre o pago no ano e o faturado no SAG, energia: {razoes}. "
                 f"A estabilidade em três exercícios indica componente estrutural, não erro "
                 f"pontual.",
                 f"Na água a mesma razão é {razoes_a} — praticamente 1 para 1. É o que valida o "
@@ -766,10 +766,10 @@ def achados(series, tarifarias, dec, ms, ser_agua, orc):
                 f"{fmt(disp[0]['razao'], 2)} na {disp[0]['sigla']}, o que sugere dependência da "
                 f"modalidade tarifária de cada unidade.",
             ],
-            "impacto": "O SISCEAGE mede consumo faturado em kWh. A fatura cobra também demanda "
+            "impacto": "O SAG mede consumo faturado em kWh. A fatura cobra também demanda "
                        "contratada, energia reativa excedente, bandeiras e a contribuição de "
                        "iluminação pública — nenhum desses itens entra no sistema. Planejar "
-                       "energia só pelo SISCEAGE subestima a despesa em torno de um sexto.",
+                       "energia só pelo SAG subestima a despesa em torno de um sexto.",
             "acao": "Confrontar uma fatura completa de cada UG com o respectivo lançamento para "
                     "quantificar cada componente ausente. Onde houver demanda contratada acima "
                     "do uso efetivo, há economia disponível sem reduzir consumo.",
@@ -1001,9 +1001,10 @@ footer a{color:var(--areia)}
     <div class="crumb">BA Ap Log Ex &middot; 1ª Região Militar &middot; CML &middot; 1º CGCFEx &middot; RJ</div>
     <h1>Por que a despesa com concessionárias está mais cara em 2026</h1>
     <p class="lead">Relatório consolidado de <b>água e esgoto</b> e <b>energia elétrica</b> das seis
-    Unidades Gestoras apoiadas, com base nos relatórios do SISCEAGE de 2023 a 2026. Além do
-    resultado, o relatório documenta os <b>defeitos de lançamento</b> que hoje impedem fechar o
-    número financeiro do conjunto.</p>
+    Unidades Gestoras apoiadas, com base nos relatórios do <b>SAG</b> (Sistema de Acompanhamento
+    da Gestão) de 2023 a 2026 e na execução orçamentária do Tesouro Gerencial. Além do resultado,
+    o relatório documenta os <b>defeitos de lançamento</b> que hoje impedem fechar o número
+    financeiro do conjunto.</p>
     <div class="marca" id="marcas"></div>
   </div>
 </header>
@@ -1057,7 +1058,7 @@ footer a{color:var(--areia)}
   <div class="rolagem" id="t-kwh"></div>
   <h3 style="margin-top:34px">Valor — o dado que exige reconstrução</h3>
   <p class="sub">As UG marcadas com <b>R</b> tiveram o gasto reconstruído (kWh &times; tarifa lançada),
-  porque o SISCEAGE recebeu tarifa no lugar do valor da fatura. Ver achado A2.</p>
+  porque o SAG recebeu tarifa no lugar do valor da fatura. Ver achado A2.</p>
   <div class="rolagem" id="t-rs"></div>
 </div></section>
 
@@ -1073,8 +1074,8 @@ footer a{color:var(--areia)}
   <div id="g-caixa"></div>
   <div class="rolagem" id="t-orc"></div>
 
-  <h3 style="margin-top:34px">O SISCEAGE bate com o caixa?</h3>
-  <p class="sub">Razão entre o pago no ano e o faturamento lançado no SISCEAGE. Perto de 1,00, o
+  <h3 style="margin-top:34px">O SAG bate com o caixa?</h3>
+  <p class="sub">Razão entre o pago no ano e o faturamento lançado no SAG. Perto de 1,00, o
   sistema reflete a despesa; acima disso, a fatura cobra o que o sistema não registra.</p>
   <div class="rolagem" id="t-cruza"></div>
   <div class="cartao" id="cruza-nota"></div>
@@ -1102,7 +1103,7 @@ footer a{color:var(--areia)}
   <span class="tag">Bloco 4 &middot; Auditoria do dado</span>
   <h2>Achados</h2>
   <p class="lead">Seis achados, do crítico ao informativo. Cada um traz a evidência numérica
-  extraída dos próprios arquivos do SISCEAGE.</p>
+  extraída dos próprios arquivos do SAG.</p>
   <div id="lista-achados"></div>
 </div></section>
 
@@ -1110,7 +1111,7 @@ footer a{color:var(--areia)}
   <span class="tag">Bloco 5 &middot; Por unidade gestora</span>
   <h2>Painel das seis UG</h2>
   <p class="lead">As seis Unidades Gestoras apoiadas pela BA Ap Log Ex, todas na
-  1ª Região Militar. As denominações por extenso foram informadas pela própria Base — o SISCEAGE
+  1ª Região Militar. As denominações por extenso foram informadas pela própria Base — o SAG
   exporta apenas a sigla.</p>
   <div class="grade" id="cards-ug"></div>
 </div></section>
@@ -1285,7 +1286,7 @@ a tarifa média efetiva do conjunto passou de <b>${rs(T.p25)}/m³</b> para <b>${
 anulou ${n(Math.abs(T.efeito_preco / T.efeito_volume) * 100, 0)}% de toda a economia conquistada
 com a redução de consumo.</p>
 <p>Na energia elétrica o quadro se inverte: o <b>consumo físico cresceu em ${D.energia.ugs_em_alta} das 6 UG</b>,
-mas o valor lançado no SISCEAGE <b>não pode ser somado</b> — duas UG lançaram tarifa no lugar do
+mas o valor lançado no SAG <b>não pode ser somado</b> — duas UG lançaram tarifa no lugar do
 valor da fatura e uma teve as colunas de ponta e fora ponta invertidas. Este relatório separa
 o que os dados provam do que eles apenas sugerem.</p>` + (D.orcamento ? `
 <p>O histórico orçamentário fecha a outra ponta e traz <b>a explicação que faltava</b>. O
@@ -1434,9 +1435,9 @@ if (O) {
     {r: `Levado de ${uN} para ${+uN + 1}`, v: rs(rapN.levado, 0),
      p: `${n(rapN.levado / rapAnt.levado, 1)}× o do ano anterior`, c: 'pos'},
     {r: 'Liquidado sobre empenhado', v: n(rapN.liq_sobre_emp, 0) + '%', p: `em ${uN}`, c: 'pos'},
-    {r: 'Energia — caixa ÷ SISCEAGE', v: n(cruzE.razao_media, 2),
+    {r: 'Energia — caixa ÷ SAG', v: n(cruzE.razao_media, 2),
      p: `o sistema registra ${n(100 / cruzE.razao_media, 0)}% da fatura`, c: 'pos'},
-    {r: 'Água — caixa ÷ SISCEAGE', v: n(cruzA.razao_media, 2),
+    {r: 'Água — caixa ÷ SAG', v: n(cruzA.razao_media, 2),
      p: 'perto de 1,00: o dado confere', c: 'neg'},
   ].map(k => `<div class="kpi"><div class="rot">${k.r}</div>
     <div class="num ${k.c}">${k.v}</div><div class="pe">${k.p}</div></div>`).join('');
@@ -1460,7 +1461,7 @@ if (O) {
   $('#t-cruza').innerHTML = `<table><thead><tr><th>Serviço</th>` +
     O.anos_cruzamento.map(a => `<th class="num" colspan="3">${a}</th>`).join('') +
     `</tr><tr><th></th>` + O.anos_cruzamento.map(() =>
-      `<th class="num sub">SISCEAGE</th><th class="num sub">pago</th><th class="num sub">razão</th>`
+      `<th class="num sub">SAG</th><th class="num sub">pago</th><th class="num sub">razão</th>`
     ).join('') + `</tr></thead><tbody>` +
     O.cruzamento.map(c => `<tr><td><b>${c.rotulo}</b></td>` +
       O.anos_cruzamento.map(a => `<td class="num">${n(c.anos[a].sis, 0)}</td>
@@ -1471,10 +1472,10 @@ if (O) {
   const disp = [...cruzE.por_ug].sort((a, b) => (b.razao || 0) - (a.razao || 0));
   $('#cruza-nota').innerHTML = `<h3 style="margin-top:0">Leitura</h3>
   <p><b>A água confere.</b> A razão fica em ${O.anos_cruzamento.map(a =>
-    n(cruzA.anos[a].razao, 3)).join(', ')} nos três exercícios — o que o SISCEAGE registra é o que
+    n(cruzA.anos[a].razao, 3)).join(', ')} nos três exercícios — o que o SAG registra é o que
   sai do caixa. Isso valida, por fora, toda a análise de tarifa do Bloco 1.</p>
   <p style="margin-bottom:0"><b>A energia não.</b> A razão fica em ${O.anos_cruzamento.map(a =>
-    n(cruzE.anos[a].razao, 3)).join(', ')} — estável demais para ser erro pontual. O SISCEAGE mede
+    n(cruzE.anos[a].razao, 3)).join(', ')} — estável demais para ser erro pontual. O SAG mede
   consumo faturado em kWh; a fatura cobra também demanda contratada, energia reativa, bandeiras e
   contribuição de iluminação pública. Em ${O.anos_cruzamento[O.anos_cruzamento.length - 1]} a
   dispersão vai de <b>${n(disp[disp.length - 1].razao, 2)}</b>
@@ -1630,7 +1631,7 @@ $('#cards-ug').innerHTML = D.ugs.map(u => {
 }).join('');
 
 /* ---- metas */
-$('#metas-lead').innerHTML = `A meta lançada no SISCEAGE é uma fração fixa da média dos três anos
+$('#metas-lead').innerHTML = `A meta lançada no SAG é uma fração fixa da média dos três anos
 anteriores, mês a mês — apurado nos próprios arquivos: <b>85% para água</b>,
 <b>85% para energia fora ponta</b> e <b>90% para energia ponta</b>. Barras acima de 100% indicam
 UG acima da meta, isto é, consumindo mais do que o alvo.`;
@@ -1665,10 +1666,10 @@ reserva ${n(em[4].ponta_meta)} kWh para a ponta, onde a UG deixou de lançar des
 </ul>`;
 
 /* ---- acervo */
-$('#acervo-lead').innerHTML = `O acervo tem <b>${D.acervo.total} arquivos do SISCEAGE</b>
+$('#acervo-lead').innerHTML = `O acervo tem <b>${D.acervo.total} arquivos do SAG</b>
 reorganizados em <b>${D.acervo.pastas} pastas</b> por concessionária e unidade, mais
 <b>${D.acervo.orcamentarios} crosstabs do Tesouro Gerencial</b> com a execução orçamentária.
-As seis UG têm o mesmo conjunto no SISCEAGE: <b>6 séries de energia</b> (kWh e R$ em ponta e fora
+As seis UG têm o mesmo conjunto no SAG: <b>6 séries de energia</b> (kWh e R$ em ponta e fora
 ponta, mais consumo × meta nos dois postos) e <b>3 séries de água</b> (m³, R$ e consumo × meta),
 além dos dois relatórios consolidados de meta. <b>A simetria entre as unidades está completa.</b>`;
 
@@ -1873,14 +1874,14 @@ def main():
                 "<b>BMSA — nov/2025 de água zerado</b> em consumo e valor: fatura não lançada.",
                 "<b>BMSA e ECT — energia sem jun/2026</b>; o BCMS já tem jul/2026. Mês de corte "
                 "diferente entre UG (achado A5).",
-                "<b>Os arquivos não identificam a concessionária.</b> O SISCEAGE exporta UG, "
+                "<b>Os arquivos não identificam a concessionária.</b> O SAG exporta UG, "
                 "sigla, RM, comando, CGCFEx e UF — nunca o nome da distribuidora, a matrícula "
                 "da instalação nem a denominação por extenso da unidade. A organização “por "
                 "concessionária” foi feita por <i>serviço</i> (energia elétrica / água e esgoto), "
                 "e os nomes das UG neste relatório foram informados pela BA Ap Log Ex.",
                 "<b>Não há faturas originais no acervo.</b> Nenhum documento da concessionária "
                 "permite confirmar os achados A1 a A4 nem decompor os cerca de 16% da fatura de "
-                "energia que o SISCEAGE não registra (achado A7).",
+                "energia que o SAG não registra (achado A7).",
                 "<b>O exercício de 2026 está em curso.</b> O crosstab traz a posição acumulada "
                 "até agosto e usa outro atributo de data (“Mês Lançamento”) — os valores de 2026 "
                 "não são comparáveis linha a linha com os exercícios encerrados. O que se pode "
@@ -1890,10 +1891,10 @@ def main():
         },
         "acoes": [
             {"t": "Corrigir a inversão ponta/fora ponta da Ba Ap Log Ex em 2026 (A1)",
-             "d": "Reprocessar os seis meses no SISCEAGE conferindo contra as faturas da "
+             "d": "Reprocessar os seis meses no SAG conferindo contra as faturas da "
                   "distribuidora. Até lá, nenhum indicador de energia por posto tarifário da "
                   "UG 160238 deve ser usado para decisão ou prestação de contas."},
-            {"t": "Padronizar o campo VALOR do SISCEAGE (A2)",
+            {"t": "Padronizar o campo VALOR do SAG (A2)",
              "d": "Orientar 1º D Sup e BCMS a lançar o valor total da fatura, com tributos e "
                   "bandeira tarifária, e recompor a série 2023–2026 dessas duas UG."},
             {"t": "Reunir as faturas originais do 1º semestre de 2026",
@@ -1919,7 +1920,7 @@ def main():
                   "diferença virou resto a pagar. Empenho estimativo calibrado reduz o estoque "
                   "de RAP sem risco de inadimplência."},
             {"t": "Decompor uma fatura completa de energia por UG (A7)",
-             "d": "O SISCEAGE capta cerca de 84% do que se paga em energia. Identificar quanto é "
+             "d": "O SAG capta cerca de 84% do que se paga em energia. Identificar quanto é "
                   "demanda contratada, reativo, bandeira e iluminação pública mostra onde há "
                   "economia sem reduzir consumo — sobretudo nas UG com razão mais alta."},
             {"t": "Usar a meta por posto tarifário, não a meta total",
@@ -1929,7 +1930,8 @@ def main():
         ],
         "metodo": """
 <h3>Fonte</h3>
-<p>Arquivos exportados do <b>SISCEAGE</b>, cobrindo jan/2023 a jul/2026, das seis UG apoiadas
+<p>Arquivos exportados do <b>SAG — Sistema de Acompanhamento da Gestão</b>, cobrindo jan/2023 a
+jul/2026, das seis UG apoiadas
 pela BA Ap Log Ex — todas em <b>1ª RM / CML / 1º CGCFEx / RJ</b>, conforme os próprios arquivos
 informam. São as séries históricas por UG e serviço, os gráficos de consumo × meta de 2026 e
 dois relatórios consolidados de meta. Os arquivos têm extensão <code>.xls</code>, mas o conteúdo
@@ -1993,7 +1995,8 @@ não afirma qual é o caso</b>: o acervo não permite decidir.</li>
 <li>A projeção anual do efeito preço da água supõe que o 2º semestre repita o comportamento do
 1º; é ordem de grandeza, não previsão.</li>
 </ul>""",
-        "rodape": "Fonte: SISCEAGE — relatórios de consumo e meta de água e energia das UG "
+        "rodape": "Fonte: SAG (Sistema de Acompanhamento da Gestão) — relatórios de consumo e "
+                  "meta de água e energia — e Tesouro Gerencial, para a execução orçamentária. UG "
                   "160238, 160246, 160304, 160307, 160321 e 160329 (1ª RM / CML / 1º CGCFEx / RJ). "
                   "Séries de jan/2023 a jul/2026. Página estática, sem coleta de dados do "
                   "visitante. Documento de trabalho para uso interno: os achados A1 a A4 devem ser "
@@ -2020,7 +2023,7 @@ não afirma qual é o caso</b>: o acervo não permite decidir.</li>
         print(f"      RAP levado de {aN} para {int(aN)+1}: R$ {r['levado']:,.2f} "
               f"(liquidou {r['liq_sobre_emp']:.1f}% do empenhado)")
         for c in orc["cruzamento"]:
-            print(f"      razão caixa/SISCEAGE {c['chave']}: "
+            print(f"      razão caixa/SAG {c['chave']}: "
                   + ", ".join(f"{x}={c['anos'][x]['razao']:.3f}" for x in orc["anos_cruzamento"]))
         cr = orc["corrente"]
         if cr:

@@ -3,12 +3,12 @@
 **No ar:** https://decampos603.github.io/relatorio-concessionarias-balogex/
 
 
-Site estático (HTML autocontido) que consolida os relatórios do **SISCEAGE** de **água e esgoto**
-e **energia elétrica** das seis UG apoiadas pela BA Ap Log Ex na 1ª RM, de 2023 a 2026, e responde
-à pergunta: **por que a despesa está mais cara em 2026?**
+Site estático (HTML autocontido) que consolida os relatórios do **SAG — Sistema de Acompanhamento
+da Gestão** de **água e esgoto** e **energia elétrica** das seis UG apoiadas pela BA Ap Log Ex na
+1ª RM, de 2023 a 2026, e responde à pergunta: **por que a despesa está mais cara em 2026?**
 
 - Entrada: `G:\Meu Drive\REPO\RELATORIO CONCESSIONARIAS`
-  - 56 arquivos `.xls` do **SISCEAGE** (consumo e faturamento, 2023–2026)
+  - 56 arquivos `.xls` do **SAG** (consumo e faturamento, 2023–2026)
   - 3 crosstabs `.xlsx` do **Tesouro Gerencial** (execução orçamentária, 2022–2025 encerrados
     e 2026 até agosto)
 - Saída: `site/index.html` (autocontido) + `site/dados.json`
@@ -31,7 +31,7 @@ e **energia elétrica** das seis UG apoiadas pela BA Ap Log Ex na 1ª RM, de 202
 Todas em **1ª RM / CML / 1º CGCFEx / RJ**.
 
 > **Procedência dos identificadores.** UG, sigla, RM, comando, CGCFEx e UF vêm dos próprios
-> arquivos do SISCEAGE. A **denominação por extenso** foi informada pela BA Ap Log Ex — o sistema
+> arquivos do SAG. A **denominação por extenso** foi informada pela BA Ap Log Ex — o sistema
 > não a exporta. O **nome da concessionária** continua sem fonte em todo o acervo, e por isso a
 > organização "por concessionária" é feita por **serviço**.
 >
@@ -46,7 +46,7 @@ Todas em **1ª RM / CML / 1º CGCFEx / RJ**.
    é de 28,8%. O conjunto consumiu 8,6% menos água e ainda assim só reduziu 5,2% da despesa:
    o **efeito preço de R$ 81,6 mil** no semestre anulou 43% da economia de consumo.
    Três UG gastaram **mais reais consumindo menos água**.
-2. **Energia — o consumo subiu em 4 das 6 UG**, mas o valor lançado no SISCEAGE **não fecha**.
+2. **Energia — o consumo subiu em 4 das 6 UG**, mas o valor lançado no SAG **não fecha**.
    São quatro defeitos de lançamento distintos, documentados como achados A1 a A4.
 3. **Orçamento — 2026 herdou R$ 5,64 milhões de restos a pagar de 2025.** O exercício de 2025
    empenhou R$ 12,15 mi em concessionárias e liquidou apenas 53,6%; a diferença virou resto a
@@ -55,10 +55,10 @@ Todas em **1ª RM / CML / 1º CGCFEx / RJ**.
    anteriores, e a **água roda inteiramente sobre o resto a pagar de 2025** (zero empenhado, zero
    liquidado em 2026). O custo próprio de 2026 ainda não apareceu (achado A8).
 4. **O caixa valida a água e desmente a energia.** A razão entre o pago no ano e o faturado no
-   SISCEAGE é **1,01–1,05 na água** (confere) e **1,19 na energia** nos três exercícios — ou seja,
-   o SISCEAGE registra só ~84% do que a energia custa. Faltam demanda contratada, energia
+   SAG é **1,01–1,05 na água** (confere) e **1,19 na energia** nos três exercícios — ou seja,
+   o SAG registra só ~84% do que a energia custa. Faltam demanda contratada, energia
    reativa, bandeiras e iluminação pública (achado A7).
-5. **Acervo — o SISCEAGE não identifica a concessionária.** A organização "por concessionária"
+5. **Acervo — o SAG não identifica a concessionária.** A organização "por concessionária"
    é por **serviço** (energia elétrica / água e esgoto). Não há faturas originais no acervo.
 
 ### Planos internos das concessionárias
@@ -78,7 +78,7 @@ suspender o uso dos números, mas **só a fatura original confirma** o que acont
 
 ### Regra da meta (apurada nos arquivos, não presumida)
 
-A meta lançada no SISCEAGE é uma fração fixa da média dos três anos anteriores, mês a mês.
+A meta lançada no SAG é uma fração fixa da média dos três anos anteriores, mês a mês.
 Conferido em todos os registros do acervo:
 
 | Série | Meta |
@@ -110,7 +110,7 @@ RELATORIO CONCESSIONARIAS/
 
 **Duas pegadinhas de leitura**, ambas tratadas no script:
 
-- Os arquivos do SISCEAGE têm extensão `.xls` mas o conteúdo é **HTML de tabela do Highcharts** —
+- Os arquivos do SAG têm extensão `.xls` mas o conteúdo é **HTML de tabela do Highcharts** —
   são lidos direto do HTML, sem Excel.
 - Os crosstabs do Tesouro Gerencial trazem **linhas de subtotal por Plano Interno**, que são
   descartadas na leitura (sem isso o valor dobraria), e a natureza `339000` carrega apenas
@@ -169,7 +169,7 @@ py -3 gerar_site.py && git add -A && git commit -m "Atualiza dados" && git push
 
 ## Atualizar com dados novos
 
-1. Exporte os novos gráficos do SISCEAGE.
+1. Exporte os novos gráficos do SAG.
 2. Coloque cada arquivo na pasta da sua UG e serviço, seguindo o padrão de nome:
    `SERVICO_UG_SIGLA_METRICA_PERIODO.xls`
    (ex.: `ENERGIA_160238_BA-AP-LOG-EX_CONSUMO-KWH-PONTA_2023-2026.xls`).
@@ -177,7 +177,7 @@ py -3 gerar_site.py && git add -A && git commit -m "Atualiza dados" && git push
 3. Rode `py -3 gerar_site.py` e faça o push.
 
 O arquivo `_INVENTARIO.csv` na raiz da pasta de origem mantém o de/para entre os nomes originais
-do SISCEAGE e os nomes atuais.
+do SAG e os nomes atuais.
 
 ---
 
@@ -198,6 +198,6 @@ Relatorio-Concessionarias-BALogEx/
 
 ---
 
-*Fonte: SISCEAGE — relatórios de consumo e meta de água e energia, UG 160238, 160246, 160304,
+*Fonte: SAG — relatórios de consumo e meta de água e energia, UG 160238, 160246, 160304,
 160307, 160321 e 160329. Séries de Jan/2023 a Jul/2026. Documento de trabalho: os achados A1 a A4
 devem ser conferidos contra as faturas originais antes de qualquer providência externa.*
