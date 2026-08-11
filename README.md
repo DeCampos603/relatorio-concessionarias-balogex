@@ -1,5 +1,8 @@
 # Relatório Consolidado de Concessionárias — BA Ap Log Ex e OMDS
 
+**No ar:** https://decampos603.github.io/relatorio-concessionarias-balogex/
+
+
 Site estático (HTML autocontido) que consolida os relatórios do **SISCEAGE** de **água e esgoto**
 e **energia elétrica** das seis UG apoiadas pela BA Ap Log Ex na 1ª RM, de 2023 a 2026, e responde
 à pergunta: **por que a despesa está mais cara em 2026?**
@@ -142,35 +145,25 @@ py -3 gerar_site.py --fonte "D:\outro\caminho"
 
 ---
 
-## Publicar no GitHub Pages
+## Publicação
 
-### 1) Crie o repositório
+O repositório é **público** e o site está no ar em
+https://decampos603.github.io/relatorio-concessionarias-balogex/
 
-Em github.com → **New repository** → nome ex.: `relatorio-concessionarias-balogex` →
-**Create**.
+> ⚠️ **O GitHub Pages é público.** O consumo e a despesa das seis UG estão visíveis para qualquer
+> pessoa com o link e podem ser indexados por buscadores. Para restringir, torne o repositório
+> **Private** — nesse caso o Pages só funciona em planos pagos, e a alternativa é distribuir o
+> `site/index.html` como arquivo.
 
-> ⚠️ **O GitHub Pages é público.** Ao publicar, o consumo e a despesa das seis UG ficam visíveis
-> para qualquer pessoa com o link e podem ser indexados por buscadores. Se o material for de uso
-> interno, crie o repositório como **Private** — nesse caso o Pages só funciona em planos pagos,
-> e a alternativa é distribuir o `site/index.html` como arquivo.
+O workflow `.github/workflows/pages.yml` republica a pasta `site/` a cada push na `main`, e usa
+`enablement: true` no `configure-pages` — ou seja, ativa o Pages sozinho num clone limpo, sem
+passo manual em Settings.
 
-### 2) Envie os arquivos
+### Republicar depois de atualizar os dados
 
 ```bash
-git init
-git add .
-git commit -m "Relatorio consolidado de concessionarias - BA Ap Log Ex e OMDS"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/relatorio-concessionarias-balogex.git
-git push -u origin main
+py -3 gerar_site.py && git add -A && git commit -m "Atualiza dados" && git push
 ```
-
-### 3) Habilite o Pages
-
-**Settings → Pages → Build and deployment → Source = GitHub Actions.**
-
-O workflow `.github/workflows/pages.yml` publica a pasta `site/` a cada push na `main`.
-A URL aparece em **Settings → Pages** ao fim da primeira execução.
 
 ---
 
