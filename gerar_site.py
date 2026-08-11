@@ -853,23 +853,28 @@ TEMPLATE = r"""<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Concessionárias 2026 — BA Ap Log Ex e OMDS | Relatório Consolidado</title>
 <meta name="description" content="Histórico de consumo, tarifas e despesa com concessionárias das seis UG apoiadas pela BA Ap Log Ex — 1ª RM. Base: SAG e Tesouro Gerencial.">
+<link rel="icon" href="assets/e10-mini.jpg">
+<meta name="theme-color" content="#132840">
 <style>
+/* Tema derivado do emblema do E10 — Gerenciamento de Dados:
+   azul-marinho profundo do fundo, ouro do escudo e ciano dos elementos de dados. */
 :root{
-  --verde:#1f3d2b; --verde-2:#2d5a3d; --oliva:#5c6f4a; --areia:#c9b787;
-  --tinta:#12161a; --papel:#f6f5f1; --cartao:#fff; --linha:#e2ded3;
-  --texto:#2b3138; --suave:#6b7280;
-  --alta:#b3261e; --media:#b26a00; --baixa:#2d6a4f; --info:#1f5f8b;
-  --c1:#2d5a3d; --c2:#5c6f4a; --c3:#8a7d4f; --c4:#b26a00; --c5:#1f5f8b; --c6:#7a4f6d;
-  --sobe:#b3261e; --desce:#2d6a4f;
-  --sombra:0 1px 2px rgba(18,22,26,.06),0 8px 24px rgba(18,22,26,.06);
+  --verde:#132840; --verde-2:#1b4f72; --oliva:#7a5a12; --areia:#c9971b;
+  --tinta:#0f1826; --papel:#f5f4ef; --cartao:#fff; --linha:#e0dccf;
+  --texto:#2a3340; --suave:#616c7c;
+  --alta:#b3261e; --media:#96660a; --baixa:#15705a; --info:#0e6f96;
+  --c1:#1b4f72; --c2:#0e7c9e; --c3:#a97c09; --c4:#c1440e; --c5:#5d6d7e; --c6:#8a6d3b;
+  --sobe:#b3261e; --desce:#15705a;
+  --sombra:0 1px 2px rgba(15,24,38,.07),0 8px 24px rgba(15,24,38,.07);
 }
 @media (prefers-color-scheme:dark){
-  :root{--papel:#12161a;--cartao:#1a1f25;--linha:#2b323a;--tinta:#f2f3f4;
-        --texto:#dfe3e8;--suave:#9aa3ad;--verde:#8fbf9f;--verde-2:#a9d3b6;--areia:#d8c48f;
-        --alta:#ff7a6e;--media:#e8a33f;--baixa:#5fc48f;--info:#74b7e6;
-        --c1:#6fae86;--c2:#a3b489;--c3:#d0bd80;--c4:#e8a33f;--c5:#74b7e6;--c6:#c294b3;
-        --sobe:#ff7a6e;--desce:#5fc48f;
-        --sombra:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);}
+  :root{--papel:#0c1420;--cartao:#141f30;--linha:#26364b;--tinta:#f2f4f7;
+        --texto:#dae1ea;--suave:#95a2b3;--verde:#8ec5f0;--verde-2:#a9d6f7;--areia:#e5b219;
+        --oliva:#e5b219;
+        --alta:#ff7a6e;--media:#e8a33f;--baixa:#4fd1a0;--info:#5dade2;
+        --c1:#5dade2;--c2:#48c9d6;--c3:#e5b219;--c4:#e8834a;--c5:#a6b5c4;--c6:#c9a227;
+        --sobe:#ff7a6e;--desce:#4fd1a0;
+        --sombra:0 1px 2px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.4);}
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--papel);color:var(--texto);
@@ -885,11 +890,22 @@ p{margin:0 0 1em}
 .lead{font-size:clamp(16px,1.9vw,19px);opacity:.92}
 .sub{color:var(--suave);font-size:14px}
 
-header.topo{background:linear-gradient(160deg,var(--verde) 0%,#16281d 100%);color:#f3f1e9;
-  padding:44px 0 38px;border-bottom:4px solid var(--areia)}
-@media (prefers-color-scheme:dark){header.topo{background:linear-gradient(160deg,#16281d,#0d1113)}}
+header.topo{background:linear-gradient(155deg,#16304d 0%,var(--verde) 45%,#08111d 100%);
+  color:#eef2f7;padding:44px 0 38px;border-bottom:4px solid var(--areia);position:relative}
+header.topo::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:4px;
+  background:linear-gradient(90deg,#8a6a10,#e5b219 18%,#fff0b8 50%,#e5b219 82%,#8a6a10)}
+@media (prefers-color-scheme:dark){
+  header.topo{background:linear-gradient(155deg,#122540,#0a1524 55%,#060d16)}}
 header.topo h1{color:#fff;margin-bottom:10px}
-header.topo .lead{color:#dfe6dd;max-width:70ch}
+header.topo .lead{color:#cfdae7;max-width:64ch}
+.cabeca{display:flex;gap:30px;align-items:flex-start}
+.cabeca .texto{flex:1;min-width:0}
+.emblema{flex:none;width:168px;height:auto;border-radius:14px;display:block;
+  border:2px solid rgba(229,178,25,.55);box-shadow:0 6px 26px rgba(0,0,0,.42)}
+@media (max-width:760px){
+  .cabeca{flex-direction:column-reverse;gap:20px}
+  .emblema{width:132px;align-self:flex-start}
+}
 .crumb{font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;
   text-transform:uppercase;color:var(--areia);margin-bottom:14px}
 .marca{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
@@ -1002,20 +1018,26 @@ ol.passos b{color:var(--tinta)}
 footer{background:var(--verde);color:#dfe6dd;padding:34px 0;font-size:13.5px}
 @media (prefers-color-scheme:dark){footer{background:#16281d}}
 footer a{color:var(--areia)}
-footer .creditos{margin:0 0 18px;padding:14px 0;font-size:14.5px;line-height:1.5;
-  border-top:1px solid rgba(201,183,135,.28);border-bottom:1px solid rgba(201,183,135,.28)}
-footer .creditos b{color:#f3f1e9}
+footer .creditos{margin:0 0 18px;padding:16px 0;font-size:14.5px;line-height:1.5;
+  border-top:1px solid rgba(229,178,25,.32);border-bottom:1px solid rgba(229,178,25,.32);
+  display:flex;gap:16px;align-items:center}
+footer .creditos img{flex:none;width:62px;height:auto;border-radius:9px;
+  border:1px solid rgba(229,178,25,.5)}
+footer .creditos b{color:var(--areia)}
+@media (max-width:520px){footer .creditos{flex-direction:column;align-items:flex-start}}
 @media print{
   nav.indice{display:none} section{page-break-inside:avoid;padding:24px 0}
   .achado{page-break-inside:avoid} .achado .corpo{display:block!important}
-  header.topo{background:#1f3d2b!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  header.topo{background:#132840!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .emblema{width:120px!important}
 }
 </style>
 </head>
 <body>
 
 <header class="topo">
-  <div class="wrap">
+  <div class="wrap cabeca">
+    <div class="texto">
     <div class="crumb">BA Ap Log Ex &middot; 1ª Região Militar &middot; CML &middot; 1º CGCFEx &middot; RJ</div>
     <h1>Por que a despesa com concessionárias está mais cara em 2026</h1>
     <p class="lead">Painel de acompanhamento das contas de concessionárias das seis Unidades
@@ -1028,6 +1050,9 @@ footer .creditos b{color:#f3f1e9}
     o que permite separar o que a unidade consumiu do que ela efetivamente pagou — e é também o
     que revela os <b>defeitos de lançamento</b> documentados aqui.</p>
     <div class="marca" id="marcas"></div>
+    </div>
+    <img class="emblema" src="assets/e10.jpg" width="810" height="900"
+         alt="Emblema do E10 do Comando da BA Ap Log Ex — Gerenciamento de Dados">
   </div>
 </header>
 
@@ -1180,8 +1205,12 @@ footer .creditos b{color:#f3f1e9}
 
 <footer><div class="wrap">
   <p style="margin-bottom:6px"><b>Relatório Consolidado de Concessionárias — BA Ap Log Ex e OMDS</b></p>
-  <p class="creditos">Painel desenvolvido pelo <b>E10 do Comando da BA Ap Log Ex</b><br>
-  TC Saldanha &middot; Sgt Rosendo &middot; Sgt De Campos</p>
+  <div class="creditos">
+    <img src="assets/e10-mini.jpg" width="198" height="220"
+         alt="Emblema do E10 — Gerenciamento de Dados">
+    <span>Painel desenvolvido pelo <b>E10 do Comando da BA Ap Log Ex</b><br>
+    TC Saldanha &middot; Sgt Rosendo &middot; Sgt De Campos</span>
+  </div>
   <p class="sub" style="color:#c8d2c6" id="rodape"></p>
 </div></footer>
 

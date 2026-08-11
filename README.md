@@ -189,12 +189,26 @@ Relatorio-Concessionarias-BALogEx/
 ├── README.md
 ├── .gitignore
 ├── .github/workflows/pages.yml      # publicação no GitHub Pages
+├── assets-fonte/
+│   └── e10-emblema.jpeg             # emblema original do E10 (fonte do tema)
 └── site/
     ├── index.html                   # relatório (autocontido, tema claro/escuro, imprimível)
     ├── dados.json                   # dados calculados, para reuso
     ├── .nojekyll
-    └── assets/logos/                # brasões das seis UG
+    └── assets/
+        ├── e10.jpg, e10-mini.jpg    # emblema otimizado (cabeçalho, créditos, favicon)
+        └── logos/                   # brasões das seis UG
 ```
+
+## Tema visual
+
+As cores saem do **emblema do E10 — Gerenciamento de Dados**: azul-marinho profundo do fundo,
+ouro do escudo BAAP LOG e ciano dos elementos de dados. A paleta foi extraída da própria imagem
+e conferida para contraste — todo texto fica acima de 4,5:1 nos dois temas.
+
+Para trocar o tema, edite o bloco `:root` no topo do `TEMPLATE`, em `gerar_site.py`:
+`--verde` (cor institucional), `--areia` (acento), `--c1` a `--c6` (séries dos gráficos).
+Os gráficos leem essas variáveis em tempo de execução e se redesenham quando o tema do sistema muda.
 
 ---
 
