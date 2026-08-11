@@ -26,7 +26,11 @@ jobs:
       - name: Conferir se o site foi gerado
         run: test -f site/index.html
 
+      # enablement: true faz o próprio workflow ativar o Pages na primeira execução,
+      # dispensando o passo manual em Settings -> Pages.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
