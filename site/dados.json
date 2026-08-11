@@ -1,0 +1,2568 @@
+{
+ "gerado_em": "10/08/2026 21:46",
+ "ugs": [
+  {
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "slug": "BA-AP-LOG-EX",
+   "logo": "BAAPLOG.png",
+   "nome": "Base de Apoio Logístico",
+   "alertas": [
+    {
+     "id": "A1",
+     "txt": "Colunas PONTA e FORA PONTA invertidas em 2026"
+    }
+   ]
+  },
+  {
+   "ug": "160246",
+   "sigla": "DC Mun",
+   "slug": "DC-MUN",
+   "logo": "DCMUN.png",
+   "nome": "Depósito Central de Munição",
+   "alertas": []
+  },
+  {
+   "ug": "160304",
+   "sigla": "BMSA",
+   "slug": "BMSA",
+   "logo": "BMSA.png",
+   "nome": "Batalhão de Manutenção e Suprimento de Armamento",
+   "alertas": [
+    {
+     "id": "A4",
+     "txt": "Refaturamentos e fatura não lançada contaminam a base de 2025"
+    }
+   ]
+  },
+  {
+   "ug": "160307",
+   "sigla": "1º D Sup",
+   "slug": "1-D-SUP",
+   "logo": "1DSUP.png",
+   "nome": "1º Depósito de Suprimentos",
+   "alertas": [
+    {
+     "id": "A2",
+     "txt": "Campo VALOR preenchido com a TARIFA (R$/kWh), não com o valor da fatura"
+    }
+   ]
+  },
+  {
+   "ug": "160321",
+   "sigla": "ECT",
+   "slug": "ECT",
+   "logo": "Ect.png",
+   "nome": "Estabelecimento Central de Transportes",
+   "alertas": [
+    {
+     "id": "A3",
+     "txt": "Série do ECT muda de posto tarifário entre 2024 e 2025"
+    }
+   ]
+  },
+  {
+   "ug": "160329",
+   "sigla": "BCMS",
+   "slug": "BCMS",
+   "logo": "BCMS.png",
+   "nome": "Batalhão Central de Manutenção e Suprimento",
+   "alertas": [
+    {
+     "id": "A2",
+     "txt": "Campo VALOR preenchido com a TARIFA (R$/kWh), não com o valor da fatura"
+    }
+   ]
+  }
+ ],
+ "agua": {
+  "decomposicao": {
+   "itens": [
+    {
+     "ug": "160238",
+     "sigla": "Ba Ap Log Ex",
+     "slug": "BA-AP-LOG-EX",
+     "logo": "BAAPLOG.png",
+     "m25": 11418.0,
+     "m26": 11192.0,
+     "r25": 326348.52999999997,
+     "r26": 362667.93,
+     "p25": 28.58193466456472,
+     "p26": 32.40421104360257,
+     "var_m": -1.979330881064989,
+     "var_r": 11.129022091810882,
+     "var_p": 13.373049878868514,
+     "efeito_preco": 43642.7516958542,
+     "efeito_volume": -6459.517234191627,
+     "efeito_misto": -863.8344616625546
+    },
+    {
+     "ug": "160246",
+     "sigla": "DC Mun",
+     "slug": "DC-MUN",
+     "logo": "DCMUN.png",
+     "m25": 19918.0,
+     "m26": 19053.0,
+     "r25": 351330.96,
+     "r26": 369857.4,
+     "p25": 17.638867356160258,
+     "p26": 19.41202960163754,
+     "var_m": -4.342805502560498,
+     "var_r": 5.273215887378679,
+     "var_p": 10.052585631911427,
+     "efeito_preco": 35317.84560541647,
+     "efeito_volume": -15257.620263078623,
+     "efeito_misto": -1533.7853423378476
+    },
+    {
+     "ug": "160304",
+     "sigla": "BMSA",
+     "slug": "BMSA",
+     "logo": "BMSA.png",
+     "m25": 20333.0,
+     "m26": 17948.0,
+     "r25": 579224.12,
+     "r26": 480978.08999999997,
+     "p25": 28.486899129493924,
+     "p26": 26.798422665478046,
+     "var_m": -11.729700486893224,
+     "var_r": -16.961660712609827,
+     "var_p": -5.927203436009332,
+     "efeito_preco": -34331.79194283485,
+     "efeito_volume": -67941.25442384301,
+     "efeito_misto": 4027.0163666778685
+    },
+    {
+     "ug": "160307",
+     "sigla": "1º D Sup",
+     "slug": "1-D-SUP",
+     "logo": "1DSUP.png",
+     "m25": 8751.0,
+     "m26": 7130.0,
+     "r25": 327206.79,
+     "r26": 286459.54000000004,
+     "p25": 37.39078848131642,
+     "p26": 40.176653576437594,
+     "var_m": -18.523597303165353,
+     "var_r": -12.453057590889216,
+     "var_p": 7.4506722331175945,
+     "efeito_preco": 24379.105447405396,
+     "efeito_volume": -60610.46812821391,
+     "efeito_misto": -4515.887319191424
+    },
+    {
+     "ug": "160321",
+     "sigla": "ECT",
+     "slug": "ECT",
+     "logo": "Ect.png",
+     "m25": 4979.0,
+     "m26": 3067.0,
+     "r25": 182298.34,
+     "r26": 122026.76,
+     "p25": 36.61344446676039,
+     "p26": 39.787010107597,
+     "var_m": -38.40128539867443,
+     "var_r": -33.06205640709619,
+     "var_p": 8.66776040073951,
+     "efeito_preco": 15801.183325725466,
+     "efeito_volume": -70004.90582044587,
+     "efeito_misto": -6067.857505279592
+    },
+    {
+     "ug": "160329",
+     "sigla": "BCMS",
+     "slug": "BCMS",
+     "logo": "BCMS.png",
+     "m25": 15378.0,
+     "m26": 15452.0,
+     "r25": 430952.64999999997,
+     "r26": 461358.06,
+     "p25": 28.023972558200025,
+     "p26": 29.857498058503754,
+     "var_m": 0.4812069189751522,
+     "var_r": 7.055394600775755,
+     "var_p": 6.542703738721811,
+     "efeito_preco": 28195.955143670744,
+     "efeito_volume": 2073.773969306802,
+     "efeito_misto": 135.68088702247593
+    }
+   ],
+   "total": {
+    "m25": 80777.0,
+    "m26": 73842.0,
+    "r25": 2197361.39,
+    "r26": 2083347.78,
+    "p25": 27.20281008207782,
+    "p26": 28.213588201836355,
+    "var_m": -8.585364645876925,
+    "var_r": -5.188659931810314,
+    "var_p": 3.7157121514606706,
+    "efeito_preco": 81647.6241797351,
+    "efeito_volume": -188651.4879192097,
+    "efeito_misto": -7009.746260525433
+   }
+  },
+  "serie": [
+   {
+    "ano": "2023",
+    "m3": 69434.0,
+    "rs": 1520632.83,
+    "tarifa": 21.900406573148604
+   },
+   {
+    "ano": "2024",
+    "m3": 68951.0,
+    "rs": 1661610.23,
+    "tarifa": 24.09842105263158
+   },
+   {
+    "ano": "2025",
+    "m3": 80777.0,
+    "rs": 2197361.39,
+    "tarifa": 27.20281008207782
+   },
+   {
+    "ano": "2026",
+    "m3": 73842.0,
+    "rs": 2083347.78,
+    "tarifa": 28.213588201836355
+   }
+  ]
+ },
+ "energia": {
+  "itens": [
+   {
+    "ug": "160238",
+    "sigla": "Ba Ap Log Ex",
+    "logo": "BAAPLOG.png",
+    "meses": 6,
+    "k23": 348857.0,
+    "k24": 375488.0,
+    "k25": 394154.0,
+    "k26": 306216.0,
+    "variacao": -22.310568965429756,
+    "v23": 259595.22000000003,
+    "v24": 304274.71,
+    "v25": 323824.36,
+    "v26": 114376.74,
+    "reconstruido": false,
+    "selo": "Colunas invertidas (A1)",
+    "selo_classe": "p-alta"
+   },
+   {
+    "ug": "160246",
+    "sigla": "DC Mun",
+    "logo": "DCMUN.png",
+    "meses": 6,
+    "k23": 235015.81,
+    "k24": 266195.0,
+    "k25": 273716.0,
+    "k26": 285204.6,
+    "variacao": 4.197270163234879,
+    "v23": 201621.25,
+    "v24": 247580.83000000002,
+    "v25": 257463.99000000002,
+    "v26": 189581.06,
+    "reconstruido": false,
+    "selo": "Consistente",
+    "selo_classe": "p-baixa"
+   },
+   {
+    "ug": "160304",
+    "sigla": "BMSA",
+    "logo": "BMSA.png",
+    "meses": 5,
+    "k23": 191150.0,
+    "k24": 243494.0,
+    "k25": 192319.67,
+    "k26": 198966.0,
+    "variacao": 3.4558763541971516,
+    "v23": 168154.43000000002,
+    "v24": 219519.78000000003,
+    "v25": 286116.52,
+    "v26": 72273.6,
+    "reconstruido": false,
+    "selo": "Atípicos em 2025 (A4)",
+    "selo_classe": "p-media"
+   },
+   {
+    "ug": "160307",
+    "sigla": "1º D Sup",
+    "logo": "1DSUP.png",
+    "meses": 6,
+    "k23": 486342.0,
+    "k24": 537089.0,
+    "k25": 592990.0,
+    "k26": 614204.0,
+    "variacao": 3.577463363631761,
+    "v23": 350370.3,
+    "v24": 438630.07,
+    "v25": 487712.7,
+    "v26": 241217.22000000003,
+    "reconstruido": true,
+    "selo": "Reconstruído de tarifa (A2)",
+    "selo_classe": "p-media"
+   },
+   {
+    "ug": "160321",
+    "sigla": "ECT",
+    "logo": "Ect.png",
+    "meses": 5,
+    "k23": 119027.0,
+    "k24": 113727.0,
+    "k25": 117138.0,
+    "k26": 103100.0,
+    "variacao": -11.984155440591437,
+    "v23": 136247.62,
+    "v24": 158724.65,
+    "v25": 163341.83000000002,
+    "v26": 136598.87,
+    "reconstruido": false,
+    "selo": "Posto tarifário trocado (A3)",
+    "selo_classe": "p-media"
+   },
+   {
+    "ug": "160329",
+    "sigla": "BCMS",
+    "logo": "BCMS.png",
+    "meses": 6,
+    "k23": 388197.0,
+    "k24": 398169.97000000003,
+    "k25": 400250.0,
+    "k26": 401340.84,
+    "variacao": 0.2725396627108134,
+    "v23": 363736.17,
+    "v24": 419615.1341,
+    "v25": 420323.27,
+    "v26": 350586.1415,
+    "reconstruido": true,
+    "selo": "Reconstruído de tarifa (A2)",
+    "selo_classe": "p-media"
+   }
+  ],
+  "consumo_total": {
+   "k23": 1768588.81,
+   "k24": 1934162.97,
+   "k25": 1970567.67,
+   "k26": 1909031.4400000002,
+   "variacao": -3.1227666492670947
+  },
+  "ugs_em_alta": 4,
+  "tarifarias": [
+   "160307",
+   "160329"
+  ],
+  "tarifarias_sigla": "1º D Sup e BCMS"
+ },
+ "metas": {
+  "agua": [
+   {
+    "ug": "160238",
+    "sigla": "Ba Ap Log Ex",
+    "logo": "BAAPLOG.png",
+    "mes": 6,
+    "acumulado": 11192.0,
+    "meta": 9916.1,
+    "desvio": 12.866953741894482
+   },
+   {
+    "ug": "160246",
+    "sigla": "DC Mun",
+    "logo": "DCMUN.png",
+    "mes": 6,
+    "acumulado": 19053.0,
+    "meta": 16379.22,
+    "desvio": 16.324220567279756
+   },
+   {
+    "ug": "160304",
+    "sigla": "BMSA",
+    "logo": "BMSA.png",
+    "mes": 6,
+    "acumulado": 17948.0,
+    "meta": 11965.74,
+    "desvio": 49.994902112196996
+   },
+   {
+    "ug": "160307",
+    "sigla": "1º D Sup",
+    "logo": "1DSUP.png",
+    "mes": 6,
+    "acumulado": 7130.0,
+    "meta": 6936.56,
+    "desvio": 2.7887021809081203
+   },
+   {
+    "ug": "160321",
+    "sigla": "ECT",
+    "logo": "Ect.png",
+    "mes": 6,
+    "acumulado": 3067.0,
+    "meta": 4238.66,
+    "desvio": -27.642226552731287
+   },
+   {
+    "ug": "160329",
+    "sigla": "BCMS",
+    "logo": "BCMS.png",
+    "mes": 7,
+    "acumulado": 17322.0,
+    "meta": 14601.86,
+    "desvio": 18.628722642183938
+   }
+  ],
+  "energia": [
+   {
+    "ug": "160238",
+    "sigla": "Ba Ap Log Ex",
+    "logo": "BAAPLOG.png",
+    "mes": 6,
+    "ponta_ac": 283832.0,
+    "ponta_meta": 26482.8,
+    "ponta_desvio": 971.7597837086712,
+    "ponta_meta_ano": 48192.9,
+    "fora_ac": 22384.0,
+    "fora_meta": 291896.51,
+    "fora_desvio": -92.33152873256347,
+    "fora_meta_ano": 515419.31,
+    "total_ac": 306216.0,
+    "total_meta": 318379.31,
+    "desvio": -3.8203833031738132
+   },
+   {
+    "ug": "160246",
+    "sigla": "DC Mun",
+    "logo": "DCMUN.png",
+    "mes": 6,
+    "ponta_ac": 20927.0,
+    "ponta_meta": 29870.1,
+    "ponta_desvio": -29.93997341823429,
+    "ponta_meta_ano": 50362.41,
+    "fora_ac": 264277.6,
+    "fora_meta": 191351.95,
+    "fora_desvio": 38.11074305749169,
+    "fora_meta_ano": 386721.04,
+    "total_ac": 285204.6,
+    "total_meta": 221222.05000000002,
+    "desvio": 28.922320356402075
+   },
+   {
+    "ug": "160304",
+    "sigla": "BMSA",
+    "logo": "BMSA.png",
+    "mes": 5,
+    "ponta_ac": 14929.0,
+    "ponta_meta": 15723.9,
+    "ponta_desvio": -5.055361583322204,
+    "ponta_meta_ano": 39363.0,
+    "fora_ac": 184037.0,
+    "fora_meta": 162789.36,
+    "fora_desvio": 13.052228966315749,
+    "fora_meta_ano": 407021.83999999997,
+    "total_ac": 198966.0,
+    "total_meta": 178513.25999999998,
+    "desvio": 11.457266535830456
+   },
+   {
+    "ug": "160307",
+    "sigla": "1º D Sup",
+    "logo": "1DSUP.png",
+    "mes": 6,
+    "ponta_ac": 51764.0,
+    "ponta_meta": 41133.299999999996,
+    "ponta_desvio": 25.844510408841504,
+    "ponta_meta_ano": 80430.59999999999,
+    "fora_ac": 562440.0,
+    "fora_meta": 419137.84,
+    "fora_desvio": 34.18974531147079,
+    "fora_meta_ano": 848095.15,
+    "total_ac": 614204.0,
+    "total_meta": 460271.14,
+    "desvio": 33.44395218870338
+   },
+   {
+    "ug": "160321",
+    "sigla": "ECT",
+    "logo": "Ect.png",
+    "mes": 5,
+    "ponta_ac": 0,
+    "ponta_meta": 104739.3,
+    "ponta_desvio": -100.0,
+    "ponta_meta_ano": 233295.88,
+    "fora_ac": 103100.0,
+    "fora_meta": 99567.3,
+    "fora_desvio": 3.548052422833603,
+    "fora_meta_ano": 197832.36000000002,
+    "total_ac": 103100.0,
+    "total_meta": 204306.6,
+    "desvio": -49.53662779371787
+   },
+   {
+    "ug": "160329",
+    "sigla": "BCMS",
+    "logo": "BCMS.png",
+    "mes": 7,
+    "ponta_ac": 33802.0,
+    "ponta_meta": 37113.45,
+    "ponta_desvio": -8.922506530651276,
+    "ponta_meta_ano": 66328.5,
+    "fora_ac": 415173.84,
+    "fora_meta": 341055.56,
+    "fora_desvio": 21.732025128105235,
+    "fora_meta_ano": 593295.51,
+    "total_ac": 448975.84,
+    "total_meta": 378169.01,
+    "desvio": 18.723593982489483
+   }
+  ],
+  "fora_agua": 5,
+  "fora_energia_fora": 5
+ },
+ "achados": [
+  {
+   "id": "A1",
+   "grau": "crítico",
+   "servico": "Energia",
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "titulo": "Colunas PONTA e FORA PONTA invertidas em 2026",
+   "resumo": "Todo o lançamento de energia de 2026 da Ba Ap Log Ex está com as colunas de ponta e fora ponta trocadas — nos kWh e também nos reais. Como a troca é simétrica, o total do mês não é afetado; a abertura por posto tarifário, sim, e com ela todo indicador que dependa dessa separação.",
+   "evidencias": [
+    "Jan/2026 registra 61.588 kWh na ponta contra 4.853 kWh em jan/2025 — salto de 12,7× sem nenhum fato gerador correspondente.",
+    "A coluna fora ponta de jan/2026 traz 4.871 kWh, praticamente idêntico à ponta de jan/2025 (4.853 kWh — diferença de 0,4%). As duas colunas simplesmente trocaram de lugar.",
+    "A tarifa implícita fecha a prova: a coluna “fora ponta” de jan/2026 resulta em R$ 1,5716/kWh, patamar de ponta — a mesma tarifa de ponta apurada no DC Mun no mesmo mês (R$ 1,5716/kWh). Duas UG da mesma praça e do mesmo mês: o que está trocado é a coluna."
+   ],
+   "impacto": "O acumulado de ponta da UG aparece em 283.832 kWh contra uma meta de 26.483 kWh — desvio aparente de +972%, que não existe. E, se a classificação chegar assim à fatura, esses 283.832 kWh custariam R$ 446.057,92 no posto de ponta contra R$ 65.626,08 fora dele — R$ 380.431,84 em seis meses.",
+   "acao": "Reprocessar os seis meses de 2026 no SISCEAGE e conferir contra as faturas originais da distribuidora (demanda contratada e postos tarifários)."
+  },
+  {
+   "id": "A2",
+   "grau": "crítico",
+   "servico": "Energia",
+   "ug": "160307/160329",
+   "sigla": "1º D Sup e BCMS",
+   "titulo": "Campo VALOR preenchido com a TARIFA (R$/kWh), não com o valor da fatura",
+   "resumo": "1º D Sup e BCMS lançam no campo de valor a tarifa unitária. O relatório consolidado soma isso como se fosse dinheiro, e o gasto dessas duas UG praticamente desaparece do total do conjunto.",
+   "evidencias": [
+    "1º D Sup: R$ 11,54 de “gasto” em jan–jun/2026 para 614.204 kWh consumidos — o equivalente a R$ 0,02 por MWh.",
+    "Os números mensais lançados como valor de ponta em 2026 (1,57, 1,59, 1,60, 1,66, 1,66, 1,78) têm ordem de grandeza de tarifa, não de fatura.",
+    "Confirmação cruzada: o “valor” de ponta de jan/2026 dessas UG (R$ 1,57) coincide com a tarifa de ponta apurada nas demais UG no mesmo mês (R$ 1,5716/kWh)."
+   ],
+   "impacto": "Reconstruído por kWh × tarifa, só o 1º semestre de 2026 do 1º D Sup soma R$ 241.217,22 — valor que hoje não aparece em lugar nenhum do consolidado.",
+   "acao": "Padronizar o preenchimento do SISCEAGE: campo VALOR = valor total da fatura, com tributos, encargos e bandeira tarifária. Recompor a série 2023–2026 dessas duas UG."
+  },
+  {
+   "id": "A3",
+   "grau": "alto",
+   "servico": "Energia",
+   "ug": "160321",
+   "sigla": "ECT",
+   "titulo": "Série do ECT muda de posto tarifário entre 2024 e 2025",
+   "resumo": "Até 2024 todo o consumo do ECT foi lançado como ponta; a partir de 2025 passou a ser lançado integralmente como fora ponta. A série não é comparável entre 2024 e 2025, e a meta de 2026 herdou o critério antigo.",
+   "evidencias": [
+    "2024: 253.369 kWh na ponta e 0 kWh fora ponta.",
+    "2025: 0 kWh na ponta e 232.744 kWh fora ponta.",
+    "Nov e dez/2024 estão sem valor lançado (R$ 0,00) com consumo registrado."
+   ],
+   "impacto": "A meta de 2026 do ECT ainda reserva 104.739 kWh para a ponta no período apurado, onde hoje não se lança nada — por isso o ECT aparece -49,5% em relação à meta total, número sem sentido. Comparado só no fora ponta, o ECT está +3,5% em relação à sua meta.",
+   "acao": "Confirmar junto ao ECT se houve mudança de modalidade tarifária ou apenas erro de coluna, refazer 2023–2024 no critério atual e recalcular a meta."
+  },
+  {
+   "id": "A4",
+   "grau": "alto",
+   "servico": "Energia + Água",
+   "ug": "160304",
+   "sigla": "BMSA",
+   "titulo": "Refaturamentos e fatura não lançada contaminam a base de 2025",
+   "resumo": "A série de 2025 do BMSA tem meses com consumo e valor incompatíveis entre si, típicos de refaturamento retroativo, e um mês de água sem lançamento. Isso contamina a média 2023–2025 que gera a meta de 2026.",
+   "evidencias": [
+    "Abr/2025: 6.598 kWh fora ponta com R$ 25.647,88 — tarifa implícita de R$ 3,89/kWh, 5,2× a tarifa média de 2024.",
+    "Nov/2025: 58.240 kWh fora ponta (1,5× a média mensal de 2024) e dez/2025: 112.269 kWh (2,8×).",
+    "Nov/2025 da água está zerado em consumo e em valor: fatura não lançada."
+   ],
+   "impacto": "O BMSA aparece +50,0% em relação à meta de água — o maior desvio do conjunto — sobre uma base de comparação com um mês faltando e outros inflados por refaturamento.",
+   "acao": "Marcar os meses de refaturamento no SISCEAGE, lançar nov/2025 da água e recalcular a média trienal excluindo os atípicos."
+  },
+  {
+   "id": "A5",
+   "grau": "médio",
+   "servico": "Energia + Água",
+   "ug": "TODAS",
+   "sigla": "Conjunto",
+   "titulo": "Meses de fechamento diferentes entre as UG impedem consolidação direta",
+   "resumo": "O relatório consolidado soma UG fechadas em meses diferentes, o que produz um acumulado do conjunto sem significado.",
+   "evidencias": [
+    "Energia: BMSA e ECT param em mai/2026; Ba Ap Log Ex, DC Mun e 1º D Sup vão até jun/2026; o BCMS já tem jul/2026 lançado.",
+    "Água: cinco UG até jun/2026 e o BCMS até jul/2026.",
+    "No relatório consolidado de energia há 35 registros mensais, sendo 34 no intervalo jan–jun: faltam 2 dos 36 esperados (6 UG × 6 meses)."
+   ],
+   "impacto": "Toda comparação do conjunto neste relatório foi restrita a jan–jun e, na energia, a jan–mai onde a UG não tem junho lançado. A base usada está indicada em cada tabela.",
+   "acao": "Fixar o mês de corte do relatório e só consolidar UG fechadas até ele."
+  },
+  {
+   "id": "A6",
+   "grau": "informativo",
+   "servico": "Água",
+   "ug": "TODAS",
+   "sigla": "Conjunto",
+   "titulo": "A conta de água sobe por preço, não por consumo",
+   "resumo": "Este é o único bloco em que os dados sustentam, sem ressalva, a tese de que se está pagando mais caro.",
+   "evidencias": [
+    "Tarifa média efetiva do conjunto: R$ 27,20/m³ em 2025 para R$ 28,21/m³ em 2026 (+3,7%). Desde 2023 (R$ 21,90/m³) a alta acumulada é de +28,8%, em valores nominais.",
+    "5 das 6 UG tiveram alta de tarifa, com destaque para Ba Ap Log Ex (+13,4%).",
+    "Efeito preço no semestre: R$ 81.647,62. Mantido o mesmo comportamento no 2º semestre, seriam cerca de R$ 163.295 no ano."
+   ],
+   "impacto": "O conjunto consumiu 8,6% menos água e ainda assim só reduziu 5,2% da despesa. O aumento de preço anulou 43% da economia obtida com a redução de consumo.",
+   "acao": "Não há ação corretiva de dado. As alavancas disponíveis são consumo e revisão contratual/cadastral junto à concessionária."
+  },
+  {
+   "id": "A7",
+   "grau": "alto",
+   "servico": "Energia",
+   "ug": "TODAS",
+   "sigla": "Conjunto",
+   "titulo": "O SISCEAGE registra cerca de 84% do que a fatura de energia custa",
+   "resumo": "Confrontado com o caixa efetivamente pago, o faturamento de energia lançado no SISCEAGE fica sistematicamente abaixo do desembolso. Na água isso não acontece — lá o sistema bate com o caixa.",
+   "evidencias": [
+    "Razão entre o pago no ano e o faturado no SISCEAGE, energia: 1,190 em 2023, 1,194 em 2024, 1,188 em 2025. A estabilidade em três exercícios indica componente estrutural, não erro pontual.",
+    "Na água a mesma razão é 1,009 em 2023, 1,018 em 2024, 1,048 em 2025 — praticamente 1 para 1. É o que valida o dado de água e isola o problema na energia.",
+    "A dispersão por UG é grande em 2025: de 1,01 no ECT a 1,38 na Ba Ap Log Ex, o que sugere dependência da modalidade tarifária de cada unidade."
+   ],
+   "impacto": "O SISCEAGE mede consumo faturado em kWh. A fatura cobra também demanda contratada, energia reativa excedente, bandeiras e a contribuição de iluminação pública — nenhum desses itens entra no sistema. Planejar energia só pelo SISCEAGE subestima a despesa em torno de um sexto.",
+   "acao": "Confrontar uma fatura completa de cada UG com o respectivo lançamento para quantificar cada componente ausente. Onde houver demanda contratada acima do uso efetivo, há economia disponível sem reduzir consumo."
+  },
+  {
+   "id": "A8",
+   "grau": "crítico",
+   "servico": "Orçamento",
+   "ug": "TODAS",
+   "sigla": "Conjunto",
+   "titulo": "2025 empurrou R$ 5.639.958,03 de concessionárias para 2026",
+   "resumo": "O empenho de 2025 foi muito além do que se conseguiu liquidar no exercício. A diferença virou resto a pagar e passou a pressionar o financeiro do ano seguinte — parte da conta que 2026 parece estar pagando é, na verdade, de 2025.",
+   "evidencias": [
+    "2025: empenhado R$ 12.152.567,68, liquidado R$ 6.512.609,65 (53,6%) — restam R$ 5.639.958,03.",
+    "É 2,6× o que 2024 levou para 2025 (R$ 2.136.220,13).",
+    "A relação foi conferida ano a ano: o empenhado menos o liquidado de cada exercício reaparece exatamente como resto a pagar não processado inscrito no seguinte.",
+    "O crosstab de 2026 até ago confirma o valor <b>ao centavo</b>: os restos a pagar não processados inscritos em 2026 somam exatamente R$ 5.639.958,03.",
+    "Em 2026 até ago, a água das seis UG roda <b>inteiramente sobre o resto a pagar de 2025</b>: R$ 0,00 empenhados e R$ 0,00 liquidados no exercício, com R$ 2.414.171,38 pagos contra o saldo herdado."
+   ],
+   "impacto": "Em 2026 até ago, <b>88,1% de tudo que as seis UG desembolsaram com concessionárias</b> foi para quitar exercícios anteriores — R$ 4.061.346,99 de um total de R$ 4.608.154,66. A despesa própria de 2026 mal começou a ser liquidada (R$ 548.129,68), o que significa que o custo real do exercício ainda está por aparecer.",
+   "acao": "Dimensionar o empenho estimativo pela liquidação histórica, não pelo teto do contrato, e acompanhar o estoque de restos a pagar por concessionária junto com o consumo."
+  }
+ ],
+ "completude": [
+  {
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "metrica": "Energia — kWh ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "metrica": "Energia — kWh fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "metrica": "Energia — R$ ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "metrica": "Energia — R$ fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "metrica": "Água — m³",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160238",
+   "sigla": "Ba Ap Log Ex",
+   "metrica": "Água — R$ fatura",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160246",
+   "sigla": "DC Mun",
+   "metrica": "Energia — kWh ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160246",
+   "sigla": "DC Mun",
+   "metrica": "Energia — kWh fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160246",
+   "sigla": "DC Mun",
+   "metrica": "Energia — R$ ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160246",
+   "sigla": "DC Mun",
+   "metrica": "Energia — R$ fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160246",
+   "sigla": "DC Mun",
+   "metrica": "Água — m³",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160246",
+   "sigla": "DC Mun",
+   "metrica": "Água — R$ fatura",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160304",
+   "sigla": "BMSA",
+   "metrica": "Energia — kWh ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 5,
+     "faltando": [
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160304",
+   "sigla": "BMSA",
+   "metrica": "Energia — kWh fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 5,
+     "faltando": [
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160304",
+   "sigla": "BMSA",
+   "metrica": "Energia — R$ ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 5,
+     "faltando": [
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160304",
+   "sigla": "BMSA",
+   "metrica": "Energia — R$ fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 5,
+     "faltando": [
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160304",
+   "sigla": "BMSA",
+   "metrica": "Água — m³",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 11,
+     "faltando": [
+      "Nov"
+     ]
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160304",
+   "sigla": "BMSA",
+   "metrica": "Água — R$ fatura",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 11,
+     "faltando": [
+      "Nov"
+     ]
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160307",
+   "sigla": "1º D Sup",
+   "metrica": "Energia — kWh ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160307",
+   "sigla": "1º D Sup",
+   "metrica": "Energia — kWh fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160307",
+   "sigla": "1º D Sup",
+   "metrica": "Energia — R$ ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160307",
+   "sigla": "1º D Sup",
+   "metrica": "Energia — R$ fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160307",
+   "sigla": "1º D Sup",
+   "metrica": "Água — m³",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160307",
+   "sigla": "1º D Sup",
+   "metrica": "Água — R$ fatura",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160321",
+   "sigla": "ECT",
+   "metrica": "Energia — kWh ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    },
+    "2026": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160321",
+   "sigla": "ECT",
+   "metrica": "Energia — kWh fora ponta",
+   "anos": {
+    "2023": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    },
+    "2024": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 5,
+     "faltando": [
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160321",
+   "sigla": "ECT",
+   "metrica": "Energia — R$ ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 10,
+     "faltando": [
+      "Nov",
+      "Dez"
+     ]
+    },
+    "2025": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    },
+    "2026": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160321",
+   "sigla": "ECT",
+   "metrica": "Energia — R$ fora ponta",
+   "anos": {
+    "2023": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    },
+    "2024": {
+     "n": 0,
+     "faltando": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 5,
+     "faltando": [
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160321",
+   "sigla": "ECT",
+   "metrica": "Água — m³",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160321",
+   "sigla": "ECT",
+   "metrica": "Água — R$ fatura",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 6,
+     "faltando": [
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160329",
+   "sigla": "BCMS",
+   "metrica": "Energia — kWh ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 7,
+     "faltando": [
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160329",
+   "sigla": "BCMS",
+   "metrica": "Energia — kWh fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 7,
+     "faltando": [
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160329",
+   "sigla": "BCMS",
+   "metrica": "Energia — R$ ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 7,
+     "faltando": [
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160329",
+   "sigla": "BCMS",
+   "metrica": "Energia — R$ fora ponta",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 7,
+     "faltando": [
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160329",
+   "sigla": "BCMS",
+   "metrica": "Água — m³",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 7,
+     "faltando": [
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  },
+  {
+   "ug": "160329",
+   "sigla": "BCMS",
+   "metrica": "Água — R$ fatura",
+   "anos": {
+    "2023": {
+     "n": 12,
+     "faltando": []
+    },
+    "2024": {
+     "n": 12,
+     "faltando": []
+    },
+    "2025": {
+     "n": 12,
+     "faltando": []
+    },
+    "2026": {
+     "n": 7,
+     "faltando": [
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+     ]
+    }
+   }
+  }
+ ],
+ "orcamento": {
+  "anos": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "periodos": {
+   "2022": {
+    "ano": "2022",
+    "mes": "DEZ",
+    "fechado": true,
+    "n_meses": 12,
+    "rotulo": "2022"
+   },
+   "2023": {
+    "ano": "2023",
+    "mes": "DEZ",
+    "fechado": true,
+    "n_meses": 12,
+    "rotulo": "2023"
+   },
+   "2024": {
+    "ano": "2024",
+    "mes": "DEZ",
+    "fechado": true,
+    "n_meses": 12,
+    "rotulo": "2024"
+   },
+   "2025": {
+    "ano": "2025",
+    "mes": "DEZ",
+    "fechado": true,
+    "n_meses": 12,
+    "rotulo": "2025"
+   },
+   "2026": {
+    "ano": "2026",
+    "mes": "AGO",
+    "fechado": false,
+    "n_meses": 8,
+    "rotulo": "2026 até ago"
+   }
+  },
+  "anos_cruzamento": [
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "servicos": [
+   {
+    "pi": "I3DACSPAGES",
+    "rotulo": "Água e esgoto",
+    "chave": "agua",
+    "anos": {
+     "2022": {
+      "emp": 3957283.57,
+      "liq": 2160883.57,
+      "pago": 2951001.77
+     },
+     "2023": {
+      "emp": 2816415.28,
+      "liq": 1406880.05,
+      "pago": 3203280.05
+     },
+     "2024": {
+      "emp": 3287582.99,
+      "liq": 2244987.61,
+      "pago": 3586371.02
+     },
+     "2025": {
+      "emp": 7118505.9,
+      "liq": 3339382.19,
+      "pago": 4390789.3
+     }
+    },
+    "ativo": true,
+    "var_pago": 48.78978876383391
+   },
+   {
+    "pi": "I3DACSPENEL",
+    "rotulo": "Energia elétrica",
+    "chave": "energia",
+    "anos": {
+     "2022": {
+      "emp": 4457178.52,
+      "liq": 1753727.96,
+      "pago": 3755653.47
+     },
+     "2023": {
+      "emp": 2884156.51,
+      "liq": 992514.0,
+      "pago": 3674416.7600000002
+     },
+     "2024": {
+      "emp": 3425109.4,
+      "liq": 2349627.03,
+      "pago": 4278536.39
+     },
+     "2025": {
+      "emp": 4998981.5600000005,
+      "liq": 3158748.49,
+      "pago": 4209321.81
+     }
+    },
+    "ativo": true,
+    "var_pago": 12.07961127467916
+   },
+   {
+    "pi": "I3DACSPTELM",
+    "rotulo": "Telefonia móvel",
+    "chave": "telm",
+    "anos": {
+     "2022": {
+      "emp": 10647.47,
+      "liq": 6863.0,
+      "pago": 15080.45
+     },
+     "2023": {
+      "emp": 18909.079999999998,
+      "liq": 8900.45,
+      "pago": 15109.42
+     },
+     "2024": {
+      "emp": 25100.62,
+      "liq": 12049.380000000001,
+      "pago": 19041.35
+     },
+     "2025": {
+      "emp": 27864.12,
+      "liq": 10896.94,
+      "pago": 25175.010000000002
+     }
+    },
+    "ativo": true,
+    "var_pago": 66.93805556200248
+   },
+   {
+    "pi": "I3DACSPTELF",
+    "rotulo": "Telefonia fixa",
+    "chave": "telf",
+    "anos": {
+     "2022": {
+      "emp": 7299.7,
+      "liq": 5023.51,
+      "pago": 40989.57
+     },
+     "2023": {
+      "emp": 1172.17,
+      "liq": 1172.17,
+      "pago": 10672.470000000001
+     },
+     "2024": {
+      "emp": 0,
+      "liq": 0,
+      "pago": 648.0
+     },
+     "2025": {
+      "emp": 0,
+      "liq": 0,
+      "pago": 0
+     }
+    },
+    "ativo": true,
+    "var_pago": -100.0
+   },
+   {
+    "pi": "I3DACSPCORR",
+    "rotulo": "Serviços postais",
+    "chave": "corr",
+    "anos": {
+     "2022": {
+      "emp": 21685.38,
+      "liq": 8485.38,
+      "pago": 15065.25
+     },
+     "2023": {
+      "emp": 20845.3,
+      "liq": 11065.08,
+      "pago": 24088.97
+     },
+     "2024": {
+      "emp": 12258.18,
+      "liq": 7167.04,
+      "pago": 16003.92
+     },
+     "2025": {
+      "emp": 7216.1,
+      "liq": 3582.0299999999997,
+      "pago": 12009.43
+     }
+    },
+    "ativo": true,
+    "var_pago": -20.283898375400344
+   }
+  ],
+  "totais": {
+   "2022": {
+    "emp": 8454094.64,
+    "liq": 3934983.42,
+    "pago": 6777790.51
+   },
+   "2023": {
+    "emp": 5741498.34,
+    "liq": 2420531.75,
+    "pago": 6927567.67
+   },
+   "2024": {
+    "emp": 6750051.19,
+    "liq": 4613831.06,
+    "pago": 7900600.68
+   },
+   "2025": {
+    "emp": 12152567.68,
+    "liq": 6512609.65,
+    "pago": 8637295.549999999
+   }
+  },
+  "rap": [
+   {
+    "ano": "2022",
+    "levado": 4519111.220000001,
+    "recebido_do_anterior": 2864801.79,
+    "liq_sobre_emp": 46.54529654047024,
+    "confere": null
+   },
+   {
+    "ano": "2023",
+    "levado": 3320966.59,
+    "recebido_do_anterior": 4519111.22,
+    "liq_sobre_emp": 42.15853783561314,
+    "confere": false
+   },
+   {
+    "ano": "2024",
+    "levado": 2136220.130000001,
+    "recebido_do_anterior": 3320966.59,
+    "liq_sobre_emp": 68.35253437537263,
+    "confere": false
+   },
+   {
+    "ano": "2025",
+    "levado": 5639958.029999999,
+    "recebido_do_anterior": 2136220.13,
+    "liq_sobre_emp": 53.59040016471647,
+    "confere": false
+   }
+  ],
+  "peso": [
+   {
+    "ug": "160238",
+    "sigla": "Ba Ap Log Ex",
+    "logo": "BAAPLOG.png",
+    "anos": {
+     "2022": {
+      "conc": 746739.7100000001,
+      "total": 8391436.860000001,
+      "pct": 8.898830110484797
+     },
+     "2023": {
+      "conc": 493321.13,
+      "total": 39156209.129999995,
+      "pct": 1.2598796996975792
+     },
+     "2024": {
+      "conc": 751394.2,
+      "total": 5158527.990000002,
+      "pct": 14.566058407681522
+     },
+     "2025": {
+      "conc": 1045854.14,
+      "total": 4688542.42,
+      "pct": 22.306594380775593
+     }
+    }
+   },
+   {
+    "ug": "160246",
+    "sigla": "DC Mun",
+    "logo": "DCMUN.png",
+    "anos": {
+     "2022": {
+      "conc": 481501.86000000004,
+      "total": 3866362.5699999994,
+      "pct": 12.453613733385591
+     },
+     "2023": {
+      "conc": 482019.25,
+      "total": 3343873.7099999995,
+      "pct": 14.414995654844873
+     },
+     "2024": {
+      "conc": 722464.98,
+      "total": 2909670.8599999985,
+      "pct": 24.82978366838373
+     },
+     "2025": {
+      "conc": 916707.98,
+      "total": 3287686.0899999994,
+      "pct": 27.883075053555377
+     }
+    }
+   },
+   {
+    "ug": "160304",
+    "sigla": "BMSA",
+    "logo": "BMSA.png",
+    "anos": {
+     "2022": {
+      "conc": 319696.08,
+      "total": 2468686.7099999995,
+      "pct": 12.950046626207993
+     },
+     "2023": {
+      "conc": 410335.38,
+      "total": 2742003.5300000003,
+      "pct": 14.964801303519836
+     },
+     "2024": {
+      "conc": 959410.35,
+      "total": 3470630.2000000007,
+      "pct": 27.64369277948425
+     },
+     "2025": {
+      "conc": 1375924.9300000002,
+      "total": 4325856.770000001,
+      "pct": 31.80699230594266
+     }
+    }
+   },
+   {
+    "ug": "160307",
+    "sigla": "1º D Sup",
+    "logo": "1DSUP.png",
+    "anos": {
+     "2022": {
+      "conc": 1147010.31,
+      "total": 4002474.870000001,
+      "pct": 28.657526836639448
+     },
+     "2023": {
+      "conc": 354381.27,
+      "total": 3084308.6100000003,
+      "pct": 11.48981229864673
+     },
+     "2024": {
+      "conc": 813548.21,
+      "total": 4924028.57,
+      "pct": 16.522004257989103
+     },
+     "2025": {
+      "conc": 1433067.31,
+      "total": 7758854.86,
+      "pct": 18.470087865517826
+     }
+    }
+   },
+   {
+    "ug": "160321",
+    "sigla": "ECT",
+    "logo": "Ect.png",
+    "anos": {
+     "2022": {
+      "conc": 197551.06,
+      "total": 2397488.19,
+      "pct": 8.239917961806519
+     },
+     "2023": {
+      "conc": 219290.68,
+      "total": 3111568.1399999997,
+      "pct": 7.047593693384456
+     },
+     "2024": {
+      "conc": 485926.81,
+      "total": 5059589.84,
+      "pct": 9.6040751398141
+     },
+     "2025": {
+      "conc": 500706.23,
+      "total": 3880834.2899999996,
+      "pct": 12.902025507510139
+     }
+    }
+   },
+   {
+    "ug": "160329",
+    "sigla": "BCMS",
+    "logo": "BCMS.png",
+    "anos": {
+     "2022": {
+      "conc": 1042484.4,
+      "total": 4930820.3,
+      "pct": 21.142210353924277
+     },
+     "2023": {
+      "conc": 461184.04000000004,
+      "total": 4382173.919999999,
+      "pct": 10.52409257184389
+     },
+     "2024": {
+      "conc": 881086.51,
+      "total": 5122879.94,
+      "pct": 17.199046636255932
+     },
+     "2025": {
+      "conc": 1240349.06,
+      "total": 6772372.720000001,
+      "pct": 18.31483752122845
+     }
+    }
+   }
+  ],
+  "peso_total": {
+   "2022": {
+    "conc": 3934983.42,
+    "total": 26057269.5,
+    "pct": 15.101288413968316
+   },
+   "2023": {
+    "conc": 2420531.75,
+    "total": 55820137.03999999,
+    "pct": 4.336305638707906
+   },
+   "2024": {
+    "conc": 4613831.06,
+    "total": 26645327.400000002,
+    "pct": 17.3157229060732
+   },
+   "2025": {
+    "conc": 6512609.65,
+    "total": 30714147.150000002,
+    "pct": 21.20394103145397
+   }
+  },
+  "cruzamento": [
+   {
+    "pi": "I3DACSPAGES",
+    "rotulo": "Água e esgoto",
+    "chave": "agua",
+    "anos": {
+     "2023": {
+      "sis": 3174564.38,
+      "pago": 3203280.05,
+      "razao": 1.009045546589293
+     },
+     "2024": {
+      "sis": 3523810.98,
+      "pago": 3586371.02,
+      "razao": 1.0177535175283436
+     },
+     "2025": {
+      "sis": 4190842.09,
+      "pago": 4390789.3,
+      "razao": 1.0477105091783594
+     }
+    },
+    "razao_media": 1.0248365244319986,
+    "por_ug": [
+     {
+      "ug": "160238",
+      "sigla": "Ba Ap Log Ex",
+      "logo": "BAAPLOG.png",
+      "sis": 675261.77,
+      "pago": 649102.19,
+      "razao": 0.9612600902906141
+     },
+     {
+      "ug": "160246",
+      "sigla": "DC Mun",
+      "logo": "DCMUN.png",
+      "sis": 689370.99,
+      "pago": 673997.42,
+      "razao": 0.9776991341048454
+     },
+     {
+      "ug": "160304",
+      "sigla": "BMSA",
+      "logo": "BMSA.png",
+      "sis": 980997.6,
+      "pago": 1069882.78,
+      "razao": 1.0906069291097145
+     },
+     {
+      "ug": "160307",
+      "sigla": "1º D Sup",
+      "logo": "1DSUP.png",
+      "sis": 657312.66,
+      "pago": 729953.8099999999,
+      "razao": 1.110512324530612
+     },
+     {
+      "ug": "160321",
+      "sigla": "ECT",
+      "logo": "Ect.png",
+      "sis": 309269.49,
+      "pago": 326735.44,
+      "razao": 1.056474856281491
+     },
+     {
+      "ug": "160329",
+      "sigla": "BCMS",
+      "logo": "BCMS.png",
+      "sis": 878629.58,
+      "pago": 941117.6599999999,
+      "razao": 1.0711199365721331
+     }
+    ]
+   },
+   {
+    "pi": "I3DACSPENEL",
+    "rotulo": "Energia elétrica",
+    "chave": "energia",
+    "anos": {
+     "2023": {
+      "sis": 3087397.17,
+      "pago": 3674416.7600000002,
+      "razao": 1.190134134896548
+     },
+     "2024": {
+      "sis": 3584534.0080999997,
+      "pago": 4278536.39,
+      "razao": 1.193610209955257
+     },
+     "2025": {
+      "sis": 3544195.1585,
+      "pago": 4209321.81,
+      "razao": 1.1876664861145794
+     }
+    },
+    "razao_media": 1.1904702769887947,
+    "por_ug": [
+     {
+      "ug": "160238",
+      "sigla": "Ba Ap Log Ex",
+      "logo": "BAAPLOG.png",
+      "sis": 504782.13,
+      "pago": 698085.9,
+      "razao": 1.3829449548857842
+     },
+     {
+      "ug": "160246",
+      "sigla": "DC Mun",
+      "logo": "DCMUN.png",
+      "sis": 485130.04,
+      "pago": 542029.27,
+      "razao": 1.1172865526942015
+     },
+     {
+      "ug": "160304",
+      "sigla": "BMSA",
+      "logo": "BMSA.png",
+      "sis": 504638.43,
+      "pago": 672754.19,
+      "razao": 1.3331410174211265
+     },
+     {
+      "ug": "160307",
+      "sigla": "1º D Sup",
+      "logo": "1DSUP.png",
+      "sis": 943948.37,
+      "pago": 1174713.5,
+      "razao": 1.244467957500684
+     },
+     {
+      "ug": "160321",
+      "sigla": "ECT",
+      "logo": "Ect.png",
+      "sis": 291046.37,
+      "pago": 294404.92,
+      "razao": 1.011539570137913
+     },
+     {
+      "ug": "160329",
+      "sigla": "BCMS",
+      "logo": "BCMS.png",
+      "sis": 814649.8185,
+      "pago": 827334.0299999999,
+      "razao": 1.0155701397237835
+     }
+    ]
+   }
+  ],
+  "corrente": {
+   "ano": "2026",
+   "mes": "AGO",
+   "rotulo": "2026 até ago",
+   "n_meses": 8,
+   "provisao": 1395507.65,
+   "empenhado": 1069985.76,
+   "liquidado": 548129.6799999999,
+   "pago_total": 4608154.66,
+   "composicao": [
+    {
+     "rot": "Despesa do próprio exercício",
+     "v": 546807.67,
+     "pct": 11.866087628230778
+    },
+    {
+     "rot": "Restos a pagar não processados",
+     "v": 3971749.91,
+     "pct": 86.18959655316777
+    },
+    {
+     "rot": "Restos a pagar processados",
+     "v": 89597.08,
+     "pct": 1.9443158186014529
+    }
+   ],
+   "pct_herdado": 88.13391237176923,
+   "rap_herdado": 5640466.08,
+   "rap_inscritos": 5639958.03,
+   "rap_reinscritos": 508.04999999999995,
+   "rap_cancelados": 0,
+   "rap_quitado": 3971749.91,
+   "rap_saldo": 1668716.17,
+   "rap_pct_quitado": 70.4152786962598,
+   "confere": true,
+   "servicos": [
+    {
+     "pi": "I3DACSPAGES",
+     "rotulo": "Água e esgoto",
+     "chave": "agua",
+     "emp": 0,
+     "liq": 0,
+     "rap_pago": 2414171.38,
+     "pago": 2473511.47,
+     "rap_herdado": 3779123.71
+    },
+    {
+     "pi": "I3DACSPENEL",
+     "rotulo": "Energia elétrica",
+     "chave": "energia",
+     "emp": 1047617.5,
+     "liq": 542571.88,
+     "rap_pago": 1540635.6,
+     "pago": 2113140.41,
+     "rap_herdado": 1840233.0699999998
+    },
+    {
+     "pi": "I3DACSPTELM",
+     "rotulo": "Telefonia móvel",
+     "chave": "telm",
+     "emp": 10744.9,
+     "liq": 3589.76,
+     "rap_pago": 14116.25,
+     "pago": 17129.61,
+     "rap_herdado": 16967.18
+    },
+    {
+     "pi": "I3DACSPCORR",
+     "rotulo": "Serviços postais",
+     "chave": "corr",
+     "emp": 11623.36,
+     "liq": 1968.0400000000002,
+     "rap_pago": 2826.68,
+     "pago": 4373.17,
+     "rap_herdado": 3634.0699999999997
+    }
+   ]
+  },
+  "caixa_total": {
+   "2022": 6777790.51,
+   "2023": 6927567.67,
+   "2024": 7900600.68,
+   "2025": 8637295.549999999
+  }
+ },
+ "acervo": {
+  "total": 56,
+  "pastas": 15,
+  "orcamentarios": 3,
+  "arquivos_orc": [
+   "CRÉDITO DISP (1).xlsx",
+   "CRÉDITO DISP 2023 2022.xlsx",
+   "CRÉDITO DISP 2025 24.xlsx"
+  ]
+ },
+ "lacunas": {
+  "resolvido": {
+   "titulo": "Lacuna fechada — acompanhamento de meta da energia",
+   "txt": "As seis UG passaram a ter o gráfico de <b>consumo × meta de energia</b> nos dois postos tarifários (ponta e fora ponta), equivalente ao que a água já tinha. São 12 arquivos que <b>completam a simetria do acervo</b> e permitiram, nesta versão, separar a meta de ponta da meta de fora ponta — o que revelou que as duas seguem percentuais diferentes."
+  },
+  "itens": [
+   "<b>ECT — energia 2023/2024 sem fora ponta e 2025/2026 sem ponta.</b> Não é arquivo faltando: é a série que muda de posto tarifário no meio (achado A3).",
+   "<b>ECT — nov e dez/2024 sem valor lançado</b> (R$ 0,00 com consumo registrado).",
+   "<b>BMSA — nov/2025 de água zerado</b> em consumo e valor: fatura não lançada.",
+   "<b>BMSA e ECT — energia sem jun/2026</b>; o BCMS já tem jul/2026. Mês de corte diferente entre UG (achado A5).",
+   "<b>Os arquivos não identificam a concessionária.</b> O SISCEAGE exporta UG, sigla, RM, comando, CGCFEx e UF — nunca o nome da distribuidora, a matrícula da instalação nem a denominação por extenso da unidade. A organização “por concessionária” foi feita por <i>serviço</i> (energia elétrica / água e esgoto), e os nomes das UG neste relatório foram informados pela BA Ap Log Ex.",
+   "<b>Não há faturas originais no acervo.</b> Nenhum documento da concessionária permite confirmar os achados A1 a A4 nem decompor os cerca de 16% da fatura de energia que o SISCEAGE não registra (achado A7).",
+   "<b>O exercício de 2026 está em curso.</b> O crosstab traz a posição acumulada até agosto e usa outro atributo de data (“Mês Lançamento”) — os valores de 2026 não são comparáveis linha a linha com os exercícios encerrados. O que se pode afirmar com segurança é a composição do desembolso e o abatimento do resto a pagar, que fecham entre si."
+  ]
+ },
+ "acoes": [
+  {
+   "t": "Corrigir a inversão ponta/fora ponta da Ba Ap Log Ex em 2026 (A1)",
+   "d": "Reprocessar os seis meses no SISCEAGE conferindo contra as faturas da distribuidora. Até lá, nenhum indicador de energia por posto tarifário da UG 160238 deve ser usado para decisão ou prestação de contas."
+  },
+  {
+   "t": "Padronizar o campo VALOR do SISCEAGE (A2)",
+   "d": "Orientar 1º D Sup e BCMS a lançar o valor total da fatura, com tributos e bandeira tarifária, e recompor a série 2023–2026 dessas duas UG."
+  },
+  {
+   "t": "Reunir as faturas originais do 1º semestre de 2026",
+   "d": "Seis meses × seis UG × dois serviços = 72 faturas. Sem elas nenhum achado deste relatório pode virar pedido de revisão junto à concessionária."
+  },
+  {
+   "t": "Abrir revisão cadastral e tarifária da água nas UG com alta de tarifa",
+   "d": "Ba Ap Log Ex, DC Mun, 1º D Sup, ECT e BCMS tiveram alta de R$/m³. Verificar categoria de uso, faixas de consumo, percentual de esgoto cobrado e hidrômetros com submedição."
+  },
+  {
+   "t": "Investigar as quedas atípicas de tarifa antes de comemorar",
+   "d": "Onde a tarifa média caiu de forma acentuada, confirmar se houve mudança de modalidade, correção de cobrança indevida ou apenas fatura não lançada."
+  },
+  {
+   "t": "Fixar mês de corte único para o relatório consolidado (A5)",
+   "d": "Consolidar apenas UG fechadas até o mês de referência e sinalizar as demais, em vez de somar bases desiguais."
+  },
+  {
+   "t": "Acompanhar mensalmente o esgotamento do resto a pagar de 2025 (A8)",
+   "d": "Enquanto o saldo herdado cobrir as faturas, a despesa corrente não aparece no exercício. Quando acabar, o custo de 2026 surge de uma vez — e é preciso ter crédito empenhado antes disso, sobretudo na água, que hoje roda inteiramente sobre o saldo de 2025."
+  },
+  {
+   "t": "Dimensionar o empenho pela liquidação histórica (A8)",
+   "d": "Em 2025 o empenho das concessionárias foi quase o dobro do liquidado, e a diferença virou resto a pagar. Empenho estimativo calibrado reduz o estoque de RAP sem risco de inadimplência."
+  },
+  {
+   "t": "Decompor uma fatura completa de energia por UG (A7)",
+   "d": "O SISCEAGE capta cerca de 84% do que se paga em energia. Identificar quanto é demanda contratada, reativo, bandeira e iluminação pública mostra onde há economia sem reduzir consumo — sobretudo nas UG com razão mais alta."
+  },
+  {
+   "t": "Usar a meta por posto tarifário, não a meta total",
+   "d": "A meta de ponta é 90% da média trienal e a de fora ponta é 85%. Somar as duas e comparar com o consumo total mistura dois critérios e esconde desvios, como ficou evidente no ECT."
+  }
+ ],
+ "metodo": "\n<h3>Fonte</h3>\n<p>Arquivos exportados do <b>SISCEAGE</b>, cobrindo jan/2023 a jul/2026, das seis UG apoiadas\npela BA Ap Log Ex — todas em <b>1ª RM / CML / 1º CGCFEx / RJ</b>, conforme os próprios arquivos\ninformam. São as séries históricas por UG e serviço, os gráficos de consumo × meta de 2026 e\ndois relatórios consolidados de meta. Os arquivos têm extensão <code>.xls</code>, mas o conteúdo\né HTML de tabela do Highcharts; foram lidos diretamente do HTML, sem Excel.</p>\n<p>A execução orçamentária vem dos <b>crosstabs do Tesouro Gerencial</b> (“CRÉDITO DISP”),\ncobrindo os exercícios de <b>2022 a 2025</b> encerrados e a posição parcial de <b>2026 até\nagosto</b>, nos Planos Internos das concessionárias:\n<code>I3DACSPAGES</code> (água e esgoto), <code>I3DACSPENEL</code> (energia e iluminação pública),\n<code>I3DACSPTELM</code> (telefonia móvel), <code>I3DACSPTELF</code> (telefonia fixa) e\n<code>I3DACSPCORR</code> (postais). Os crosstabs trazem linhas de subtotal por Plano Interno;\nelas são descartadas na leitura — sem isso o valor dobraria. As colunas de natureza 339000\ncarregam apenas provisão e crédito disponível, e por isso não entram nos totais de despesa.\nO layout do cabeçalho muda entre extrações (às vezes a métrica vem antes do período, às vezes\ndepois), então as duas linhas são localizadas pelo conteúdo. <b>O arquivo de 2026 usa o atributo\n“Mês Lançamento” em vez de “NC — Dia Emissão”</b>, por isso a posição parcial do exercício é\napresentada em bloco separado, e não na mesma série dos anos fechados.</p>\n\n<p>Dois dados <b>não vêm de nenhuma das duas fontes</b> e precisam de registro à parte:</p>\n<ul>\n<li>A <b>denominação por extenso das unidades</b> foi informada pela BA Ap Log Ex; o sistema\nexporta apenas a sigla. Todo o resto da identificação (UG, RM, comando, CGCFEx, UF) vem\ndos arquivos.</li>\n<li>O <b>nome da concessionária</b> continua sem fonte: não aparece em nenhum arquivo do acervo,\nnem há matrícula ou número de instalação. Por isso a organização “por concessionária” foi feita\npor <i>serviço</i>.</li>\n</ul>\n\n<h3>Recortes</h3>\n<ul>\n<li><b>Água:</b> jan–jun de cada ano, seis meses fechados nas seis UG.</li>\n<li><b>Energia:</b> mesma janela, reduzida a jan–mai nas UG sem jun/2026 lançado\n(BMSA e ECT). A coluna “Base” da tabela de energia informa o recorte de cada UG; o total do\nconjunto soma bases diferentes e está assinalado como tal.</li>\n<li>Jul/2026 do BCMS foi excluído de todas as comparações entre anos.</li>\n</ul>\n\n<h3>Fórmulas</h3>\n<ul>\n<li><b>Tarifa implícita</b> = valor lançado &divide; consumo lançado. Não é a tarifa homologada da\nconcessionária; é o preço efetivamente pago por unidade, já com tributos, bandeiras e encargos\nembutidos, como chega ao orçamento.</li>\n<li><b>Decomposição preço/volume:</b> efeito preço = (p₂₆ &minus; p₂₅) &times; q₂₅;\nefeito volume = (q₂₆ &minus; q₂₅) &times; p₂₅;\nefeito cruzado = (p₂₆ &minus; p₂₅) &times; (q₂₆ &minus; q₂₅). A soma dos três reproduz exatamente\na variação da despesa — o que serve de conferência do cálculo.</li>\n<li><b>Gasto de energia reconstruído</b> = &Sigma; (kWh do mês &times; tarifa lançada no mês),\naplicado apenas às UG do achado A2.</li>\n<li><b>Meta:</b> percentual fixo da média dos três anos anteriores, mês a mês. Verificado em\ntodos os registros dos arquivos: 85% na água, 85% na energia fora ponta e 90% na energia ponta.</li>\n</ul>\n\n<h3>Limites</h3>\n<ul>\n<li>Os achados A1 a A4 são inferidos da <b>consistência interna dos próprios dados</b>. São\nfortes o bastante para suspender o uso dos números, mas <b>só a fatura original confirma</b> o que\naconteceu.</li>\n<li>Onde a tarifa implícita de energia cai de forma atípica em 2026, há mais de uma explicação\npossível — entre elas mudança de modalidade tarifária ou faturamento parcial. <b>Este relatório\nnão afirma qual é o caso</b>: o acervo não permite decidir.</li>\n<li>Nenhum valor foi corrigido pela inflação. Todas as variações são <b>nominais</b>.</li>\n<li>A projeção anual do efeito preço da água supõe que o 2º semestre repita o comportamento do\n1º; é ordem de grandeza, não previsão.</li>\n</ul>",
+ "rodape": "Fonte: SISCEAGE — relatórios de consumo e meta de água e energia das UG 160238, 160246, 160304, 160307, 160321 e 160329 (1ª RM / CML / 1º CGCFEx / RJ). Séries de jan/2023 a jul/2026. Página estática, sem coleta de dados do visitante. Documento de trabalho para uso interno: os achados A1 a A4 devem ser conferidos contra as faturas originais antes de qualquer providência externa."
+}
